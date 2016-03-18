@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309093719) do
+ActiveRecord::Schema.define(version: 20160316073739) do
 
   create_table "ads", force: :cascade do |t|
     t.integer  "area_id",    limit: 4
     t.string   "url",        limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
     t.integer  "user_id",    limit: 4
+    t.decimal  "distance",               precision: 10, scale: 4
   end
 
   create_table "area_infos", force: :cascade do |t|
@@ -36,6 +37,23 @@ ActiveRecord::Schema.define(version: 20160309093719) do
     t.datetime "updated_at",                                     null: false
   end
 
+  create_table "campaign_areas", force: :cascade do |t|
+    t.integer  "campaign_id", limit: 4
+    t.integer  "area_id",     limit: 4
+    t.integer  "ad_id",       limit: 4
+    t.decimal  "time",                  precision: 10, scale: 2
+    t.decimal  "distance",              precision: 10, scale: 2
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+  end
+
+  create_table "campaigns", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.decimal  "time",                 precision: 10, scale: 2
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+  end
+
   create_table "coordinates", force: :cascade do |t|
     t.string   "user_id",    limit: 255
     t.decimal  "latitude",               precision: 15, scale: 10
@@ -45,6 +63,9 @@ ActiveRecord::Schema.define(version: 20160309093719) do
     t.datetime "updated_at",                                       null: false
     t.integer  "area_id",    limit: 4
     t.datetime "recordtime"
+    t.string   "polyline",   limit: 255
+    t.string   "device_id",  limit: 255
+    t.integer  "processed",  limit: 4
   end
 
   create_table "ncoordinates", force: :cascade do |t|
@@ -54,6 +75,13 @@ ActiveRecord::Schema.define(version: 20160309093719) do
     t.integer  "ad_id",      limit: 4
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "email",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "versions", force: :cascade do |t|

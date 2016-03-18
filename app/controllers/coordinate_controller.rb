@@ -13,6 +13,7 @@ class CoordinateController < ApplicationController
             co.area_id = obj.areaId
             co.ad_id = obj.adId
             co.recordtime = obj.timestamp
+            co.device_id = obj.deviceId
             co.save
             render :json => {:message => "Coordinate Saved"},
                 :status => 200
@@ -21,7 +22,7 @@ class CoordinateController < ApplicationController
     def coordinate_batch
         logger.debug params
             obj = JSON.parse(params[:json], object_class: OpenStruct)
-            obj.each do |o|
+            obj.li.each do |o|
                 puts o
             end
             render :json => {:message => "Coordinate Saved"},
@@ -36,7 +37,7 @@ class CoordinateController < ApplicationController
             ad_ids << ad.user_id
         end
         
-        Coordinate.where(area_id: ad_ids).page(params[:page]).per(200)
+        Coordinate.where(area_id: ad_ids).page(params[:page]).per(1000)
         
     end
 end

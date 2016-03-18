@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campaign_id: 1
+  area_id: 1
+  ad_id: 1
+  time: 9.99
+  distance: 9.99
+
+two:
+  campaign_id: 1
+  area_id: 1
+  ad_id: 1
+  time: 9.99
+  distance: 9.99

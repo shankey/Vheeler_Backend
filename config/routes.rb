@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   get '/versions' => 'application#versions'
   
-  
+  get '/get_campaign_details' => 'report#get_campaign_details'
+  get '/get_polylines' => 'report#get_polylines'
   
 end

@@ -13,6 +13,8 @@ gem 'json'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'mysql'
 gem 'kaminari'
+gem 'geokit'
+gem 'nokogiri'
 gem 'sdoc',         '0.4.0', group: :doc
 
 group :development, :test do
