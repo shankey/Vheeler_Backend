@@ -51,9 +51,11 @@ production:
   encoding: utf8
   pool: 5
   timeout: 5000
-  host: engage.ca78l9msjwmh.us-west-2.rds.amazonaws.com
-  username: Engage
-  password: Startup123#
-  database: Engage
-  port: 3306
+  
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
+
   
