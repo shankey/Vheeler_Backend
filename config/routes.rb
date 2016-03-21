@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   
   get '/get_campaign_details' => 'report#get_campaign_details'
   get '/get_polylines' => 'report#get_polylines'
+  get '/get_coordiante_info' => 'report#get_coordiante_info'
+  
+  get '/login' => 'user#login'
   
 end

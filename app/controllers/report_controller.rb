@@ -1,6 +1,9 @@
 class ReportController < ApplicationController
     
+    
+    
     def get_campaign_details
+        response.headers['Access-Control-Allow-Origin'] = 'true'
         user_id = params[:userId]
         campaign = Campaign.where(user_id: user_id).first
         puts campaign.inspect
@@ -38,6 +41,7 @@ class ReportController < ApplicationController
     end
     
     def get_polylines
+        response.headers['Access-Control-Allow-Origin'] = 'true'
         user_id = params[:userId]
         page_id = params[:pageId]
         startdate = Date.parse(params[:startDate])
@@ -60,14 +64,34 @@ class ReportController < ApplicationController
             end
             arr = polyCoordinateMap[co.polyline]
             gmap_coo = EntityGmapCoordinate.new
+            gmap_coo.id = co.id
             gmap_coo.lat = co.latitude
             gmap_coo.lng = co.longitude
+            
                 
             arr << gmap_coo
             
         end
         
+        polyCoordinateMap.each do |key, arr|
+            polyCoordinateMap[key] = arr.join(" ")
+        end
+        
         render :json => JSON.pretty_generate({:report => JSON.parse(polyCoordinateMap.to_json)}),
+             :status => 200
+        
+    end
+    
+    def get_coordiante_info
+        response.headers['Access-Control-Allow-Origin'] = 'true'
+        co_id = params[:co_id]
+        coo = Coordinate.find(co_id)
+        
+        eci = EntityCoordinateInfo.new
+        eci.area = AreaInfo.where(area_id: coo.area_id).first.area_info
+        eci.adUrl = Ad.find(coo.ad_id).url
+        
+        render :json => JSON.pretty_generate({:report => JSON.parse(eci.to_json)}),
              :status => 200
         
     end
