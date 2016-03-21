@@ -3,7 +3,7 @@ class ReportController < ApplicationController
     
     
     def get_campaign_details
-        response.headers['Access-Control-Allow-Origin'] = 'true'
+        response.headers['Access-Control-Allow-Origin'] = '*'
         user_id = params[:userId]
         campaign = Campaign.where(user_id: user_id).first
         puts campaign.inspect
@@ -41,7 +41,7 @@ class ReportController < ApplicationController
     end
     
     def get_polylines
-        response.headers['Access-Control-Allow-Origin'] = 'true'
+        response.headers['Access-Control-Allow-Origin'] = '*'
         user_id = params[:userId]
         page_id = params[:pageId]
         startdate = Date.parse(params[:startDate])
@@ -83,7 +83,7 @@ class ReportController < ApplicationController
     end
     
     def get_coordiante_info
-        response.headers['Access-Control-Allow-Origin'] = 'true'
+        response.headers['Access-Control-Allow-Origin'] = '*'
         co_id = params[:co_id]
         coo = Coordinate.find(co_id)
         

@@ -1,5 +1,8 @@
 class DropCoordinates < ActiveRecord::Migration
   def change
-    drop_table :coordinates
+    if ActiveRecord::Base.connection.table_exists? :coordinates
+      drop_table :coordinates
+    end
+    
   end
 end
