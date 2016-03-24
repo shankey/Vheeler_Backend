@@ -28,8 +28,8 @@ class KmlParse
             coos.each do |c|
                 
                 latlng = c.split(",")
-                lat = latlng[0]
-                lng = latlng[1]
+                lng = latlng[0]
+                lat = latlng[1]
                 db_coo = Coordinate.new
                 db_coo.latitude = lat
                 db_coo.longitude = lng
