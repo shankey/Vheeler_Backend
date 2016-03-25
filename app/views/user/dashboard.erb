@@ -1,0 +1,233 @@
+<div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Campaigns</a></li>
+            <li><a href="#tabs-2">Map</a></li>
+        </ul>
+        <div id="tabs-1">
+            <div id="reportinfo">
+            
+            </div>
+
+            <table id="areawise">
+                
+                <tr>
+                    <th>Area</th>
+                    <th>Ad</th>
+                    <th>Time Spent (Minutes)</th>
+                    <th>Distance (Kms)</th>
+                </tr>
+
+                
+            </table>
+
+        </div>
+        <div id="tabs-2" style="padding:0px">
+            <div style="width:10%;float:left">
+                Start Date: <input type="text" style="width:150px" id="txtStartDate"/><br /><br />
+                End Date: <input type="text" style="width:150px" id="txtEndDate"/><br /><br />
+                <input type="button" id="btnSubmit" value="Submit" style="margin-left:30px" />
+            </div> 
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script>
+
+        $( document ).ready(function() {
+            $.ajax({
+                method: "GET",
+                dataType: 'json',
+                async: false,
+                url: apiPath + "get_campaign_details?userId=" + userId,
+                success: function (data) {
+
+                    var info = 'Campaign Start Date :' + data.report.startDate
+                    + '<br>'
+                    + 'Total Time Of Campaign :' + data.report.totalTime
+                    + '<br>'
+                    + 'Remaining Time Of Campaign :' + (data.report.totalTime - data.report.runTime)
+                    + '<br>'
+                    + 'Exhausted Time of Campaign : ' + data.report.runTime
+                    + '<br>'
+
+                    $("#reportinfo").append(info);
+                    
+
+                    $.each(data.report.tableReport, function (key, value) {
+                        var tableRow = '<tr>'
+                        + '<td>' + value.area +'</td>'
+                        + '<td>' + '<img src=' + value.imageUrl + '>' +'</td>'
+                        + '<td>' + value.time +'</td>'
+                        + '<td>' + value.distance +'</td>'
+                        + '</tr>'
+
+                        $("#areawise").append(tableRow);
+                    });
+                },
+                error: function(jqXHR, textStatus){
+                    console.log("error");
+                    //
+                    //
+                    //
+                }
+            });
+        });
+        
+    </script>
+
+
+
+<script>
+        var poly;
+        var map;
+        var apiPath = "http://localhost:3000/";
+        var userId = $.cookie('userId');
+        var isMapLoaded = false;
+        $(function () {
+            $("#tabs").tabs({
+                activate: function () {
+                    if (!isMapLoaded){
+                        initMap();
+                        isMapLoaded = true;
+                    }
+                }
+            });
+            $("#txtStartDate").datepicker({ dateFormat: 'dd-mm-yy' });
+            $("#txtEndDate").datepicker({ dateFormat: 'dd-mm-yy' });
+            $("#map").height($(window).height() - 100);
+
+            $("#btnSubmit").click(function () {
+                // initMap();
+                fetchPolylines();
+            });            
+        });
+
+        function fetchPolylines() {
+            pageId = 1;
+            var lastTrip = {};
+            while(pageId!=0){
+                
+                $.ajax({
+                method: "GET",
+                dataType: 'json',
+                async: false,
+                url: apiPath + "get_polylines?userId=" + userId + "&pageId="+ pageId +"&startDate=" + $("#txtStartDate").val() + "&endDate=" + $("#txtEndDate").val(),
+                success: function (data) {
+                    arrLen = Object.keys(data.report).length;
+
+                    if ($.isEmptyObject(data.report)) {
+                        pageId=0;
+                        addLine(lastTrip[0]);
+                        return;
+                    }
+                    var tripIndex=0;
+                    $.each(data.report, function (tripName, tripData) {
+
+                        if(tripIndex ==0){
+                            if(!$.isEmptyObject(lastTrip)){
+                                if(tripName in lastTrip){
+                                    tripData = lastTrip[tripName] + " " + tripData;
+                                }else{
+                                    addLine(lastTrip[0]);
+                                }
+                                delete lastTrip[tripName];
+                            }
+                        }
+
+                        if(tripIndex == arrLen-1){
+                            lastTrip[tripName] = tripData;
+                            tripIndex++;
+                            return;
+                        }
+                        
+                        addLine(tripData, tripIndex);
+                        tripIndex++;
+                        
+                    });
+                    pageId++;
+                },
+                error: function(jqXHR, textStatus ){
+                    console.log("error");
+                    pageId=0;
+                }
+                
+            });
+                
+                
+            }
+        }
+
+        function addLine(tripData, tripIndex, pageId){
+            var arrTripData = tripData.split(" ");
+            poly = new google.maps.Polyline({
+                            strokeColor: '#000000',
+                            strokeOpacity: 1.0,
+                            strokeWeight: 3
+                            
+                        });
+
+            poly.setMap(map);
+            var path = poly.getPath();
+
+            for (var i = 0; i < arrTripData.length; i++) {
+                            var arrTripItem = arrTripData[i].split(",");
+                            var coId = arrTripItem[0];
+                            var lng = arrTripItem[1];
+                            var lat = arrTripItem[2];
+                            var latLng = new google.maps.LatLng(lat, lng);
+
+                            if (pageId == 1 && i == 0 && tripIndex==0)
+                                map.panTo(latLng);
+
+                            var marker = new google.maps.Marker({
+                                position: latLng,
+                                title: '#' + path.getLength(),
+                                icon: {
+                                    path: google.maps.SymbolPath.CIRCLE,
+                                    scale: 2
+                                },
+                                map: map
+                            });
+                            path.push(latLng);
+                            addListenerToMarker(marker, coId);
+                        }
+        }
+
+        function addListenerToMarker(marker, coId){
+            
+            marker.addListener('click', function () {
+                                var thisMarker = this;
+                                $.ajax({
+                                    method: "GET",
+                                    dataType: 'json',
+                                    url: apiPath + "get_coordiante_info?co_id=" + coId,
+                                    success: function (data) {
+                                        var area = data.report["area"];
+                                        var adUrl = data.report["adUrl"];
+                                        var polyLine = data.report["polyline"];
+                                        var timeStamp = data.report["timestamp"];
+                                        var infowindow = new google.maps.InfoWindow();
+                                        infowindow.setContent(
+                                            '<div id="content">Area: ' + area 
+                                            + '<br />TimeStamp' + timeStamp
+                                            + '<br />PolyLine' + polyLine
+                                            + '<br /><img src="' + adUrl 
+                                            + '" style="height:200px;width:200px"/></div>'
+                                        );
+                                        infowindow.open(map, thisMarker);
+                                    }
+                                });                                
+                            });
+        }
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: { lat: 28.63273841238931, lng: 77.21971853636205 }  // Center the map on CP, New Delhi.
+            });
+        }
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5wf7Rinv6cHBcdQ-yUYTbpv8zEg2IeTA">
+    </script>

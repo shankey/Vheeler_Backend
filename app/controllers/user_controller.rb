@@ -17,4 +17,11 @@ class UserController < ApplicationController
              :status => 200
         end
     end
+
+    def index
+
+    end
+
+    def dashboard
+    end
 end

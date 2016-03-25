@@ -24,16 +24,15 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
+
   adapter: mysql
   encoding: utf8
   pool: 5
   timeout: 5000
-  
   database: ebdb
   username: vheeler
   password: Test123#
-  host: aa1cvxeej0mdiuo.c7dqmnxtwad5.us-west-2.rds.amazonaws.com
+  host: aaqbvkjopqxhn3.c7dqmnxtwad5.us-west-2.rds.amazonaws.com
   port: 3306
 
 

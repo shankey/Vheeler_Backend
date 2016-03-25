@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get '/' => 'user#index'
+  get '/dashboard' => 'user#dashboard'
+
   post '/coordinate' => 'coordinate#coordinate'
   post '/coordinate_batch' => 'coordinate#coordinate_batch'
   get '/coordinate_markers' => 'coordinate#coordinate_markers'

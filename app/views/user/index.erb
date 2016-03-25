@@ -1,0 +1,42 @@
+UserName: <input type="text" id="username"> <br>
+Password: <input type="password" id="password">
+<button type="button" id="submitlogin">Submit</button>
+
+<script type="text/javascript">
+
+	var apiPath = "http://localhost:3000/";
+	$( document ).ready(function() {
+
+		$( "#submitlogin" ).click(function() {
+  			if($.isEmptyObject($("#username").val()) || $.isEmptyObject($("#password").val())){
+  				alert("enter username and password");
+  				return;
+  			}
+
+  			var username = $("#username").val();
+  			var password = $("#password").val();
+
+  			$.ajax({
+                method: "GET",
+                dataType: 'json',
+                async: false,
+                url: apiPath + "login?userName=" + username + "&password=" + password ,
+                success: function (data) {
+                    console.log(data);
+                    $.cookie('userId',data.json.userId);
+                    window.location.href = "/dashboard";
+
+                },
+                error: function(jqXHR, textStatus){
+                    console.log("error");
+                    //
+                    //
+                    //
+                }
+            });
+
+		});
+
+
+	});
+</script>

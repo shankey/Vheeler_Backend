@@ -21,7 +21,7 @@ class ReportController < ApplicationController
             etar.time = campaign_area.time
             etar.distance = campaign_area.distance
             
-            run_time + run_time + campaign_area.time
+            run_time = run_time + campaign_area.time
             run_distance = run_distance + campaign_area.distance
             
             table_rows << etar
@@ -90,6 +90,8 @@ class ReportController < ApplicationController
         eci = EntityCoordinateInfo.new
         eci.area = AreaInfo.where(area_id: coo.area_id).first.area_info
         eci.adUrl = Ad.find(coo.ad_id).url
+        eci.polyline = coo.polyline
+        eci.timestamp = coo.recordtime
         
         render :json => JSON.pretty_generate({:report => JSON.parse(eci.to_json)}),
              :status => 200
