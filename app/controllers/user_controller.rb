@@ -19,9 +19,10 @@ class UserController < ApplicationController
     end
 
     def index
-
+        @base_api = Figaro.env.base_api
     end
 
     def dashboard
+        @base_api = Figaro.env.base_api
     end
 end

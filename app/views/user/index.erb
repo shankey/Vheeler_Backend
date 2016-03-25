@@ -4,7 +4,7 @@ Password: <input type="password" id="password">
 
 <script type="text/javascript">
 
-	var apiPath = "http://localhost:3000/";
+	var apiPath = <%= @base_api %>;
 	$( document ).ready(function() {
 
 		$( "#submitlogin" ).click(function() {

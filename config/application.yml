@@ -1,0 +1,7 @@
+base_api: "http://localhost:3000/"
+
+test:
+  base_api: "http://localhost:3000/"
+
+production:
+  base_api: "http://vhee.us-west-2.elasticbeanstalk.com/"
