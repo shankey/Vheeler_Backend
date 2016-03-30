@@ -1,56 +1,200 @@
-<div id="tabs">
-        <ul>
-            <li><a href="#tabs-1">Campaigns</a></li>
-            <li><a href="#tabs-2">Map</a></li>
+<script type="text/javascript">
+  if($.cookie('userId')==null){
+    window.location.href = "/";
+  }
+
+</script>
+
+<div id="cover"></div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example- navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button> -->
+        
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+        <ul class="nav navbar-nav">
+          <li class=""><a href="#">Contact Us</a></li>
         </ul>
-        <div id="tabs-1">
-            <div id="reportinfo">
-            
+      
+        <ul class="nav navbar-nav navbar-right">
+          <li id="signout"><a href="#">Sign Out</a></li>
+        
+        </ul>
+      <!-- </div> --><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+
+<ul class="nav nav-pills" id="second-bar" role="tablist">
+    <li role="presentation" class="active"><a href="#campaigns" aria-controls="campaigns" role="tab" data-toggle="tab">Campaigns</a></li>
+    <li role="presentation"><a href="#maps" aria-controls="maps" role="tab" data-toggle="tab">Maps</a></li>
+  </ul>
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="campaigns">
+        <div class="report-content">
+            <div class="col-md-3"></div>
+            <div class="col-md-6" id="report-info">
+                <div class="info">
+                    <p>Campaign Start Date : <span class="float-right" id="camp-start-date"></span> </p>
+                    <p>Total Time Of Campaign :  <span class="float-right" id="camp-total-time"></span> </p>
+                    <p>Remaining Time Of Campaign : <span class="float-right" id="camp-remaining-time"></span> </p>
+                    <p>Exhausted Time of Campaign : <span class="float-right" id="camp-exhausted-time"></span> </p>
+                    <p>Run Distance : <span class="float-right" id="camp-run-distance"></span> </p>
+                </div>
+                <hr size="3px">
+                <div class="table-info">
+                    <table id="areawise">
+                
+                        <tr>
+                            <th>Area</th>
+                            <th>Ad</th>
+                            <th>Time Spent (Minutes)</th>
+                            <th>Distance (Kms)</th>
+                        </tr>
+                    </table>
+                </div>
             </div>
-
-            <table id="areawise">
-                
-                <tr>
-                    <th>Area</th>
-                    <th>Ad</th>
-                    <th>Time Spent (Minutes)</th>
-                    <th>Distance (Kms)</th>
-                </tr>
-
-                
-            </table>
-
-        </div>
-        <div id="tabs-2" style="padding:0px">
-            <div style="width:10%;float:left">
-                Start Date: <input type="text" style="width:150px" id="txtStartDate"/><br /><br />
-                End Date: <input type="text" style="width:150px" id="txtEndDate"/><br /><br />
-                <input type="button" id="btnSubmit" value="Submit" style="margin-left:30px" />
-            </div> 
-            <div id="map"></div>
+            <div class="col-md-3"></div>
         </div>
     </div>
 
-    <script>
 
-        $( document ).ready(function() {
+    <div role="tabpanel" class="tab-pane" id="maps">
+
+     <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <!-- <li class="sidebar-brand">
+                    <a href="#">
+                        Filter
+                    </a>
+                </li> -->
+                <li>
+                    <div class="date-form">
+                        <div class="form-horizontal">
+                            <div class="control-group">
+                                <div class="controls">
+                                    <label for="date-picker-1" class="control-label sidebar-left">Start Date: 
+                                    </label>
+                                    <div class="sidebar-right">
+                            <!-- <span class="glyphicon glyphicon-calendar"> </span> -->
+                                        <input id="date-picker-1" type="text" class="date-picker-1 form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="date-form">
+                        <div class="form-horizontal">
+                            <div class="control-group">
+                                <div class="controls">
+                                    <label for="date-picker-2" class="control-label sidebar-left">Start Date: 
+                                    </label>
+                                    <div class="sidebar-right">
+                            <!-- <span class="glyphicon glyphicon-calendar"> </span> -->
+                                        <input id="date-picker-2" type="text" class="date-picker-2 form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        $(".date-picker-1").datepicker({
+                            dateFormat: 'dd-mm-yy'
+                        });
+                        
+                        $(".date-picker-2").datepicker({
+                            dateFormat: 'dd-mm-yy'
+                        });
+                    // $(".date-picker").on("change", function () {
+                    //     var id = $(this).attr("id");
+                    //     var val = $("label[for='" + id + "']").text();
+                    //     $("#msg").text(val + " changed");
+                    // });
+                    </script>
+                </li>
+
+                <li>
+                    <label  class="control-label sidebar-left">Areas: 
+                    </label>
+                    <div class="sidebar-right" style="width: 100px">
+                        <select  id="example-getting-started" multiple="multiple">
+                            <option value="cheese" selected>Cheese</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="mozarella">Mozzarella</option>
+                            <option value="mushrooms">Mushrooms</option>
+                            <option value="pepperoni">Pepperoni</option>
+                            <option value="onions">Onions</option>
+                        </select>
+                    </div>
+
+
+
+                </li>
+                <li>
+                    <div class="sidebar-submit">
+                        <button type="button" id="poly-submit" class="btn btn-default" aria-label="Left Align">
+                            Submit
+                        </button>
+                    </div>
+
+                </li>
+                
+            </ul>
+        </div>
+
+        <div id="map"></div>   
+    </div> 
+    
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#example-getting-started').multiselect({
+            nonSelectedText: 'None',
+            dropRight: 'true',
+            numberDisplayed: 1,
+            nSelectedText: 'selected'
+        });
+    });
+</script>
+
+<script>
+
+        $( window ).load(function() {
+            var apiPath = "<%= @base_api %>";
+            var userId = $.cookie('userId');
             $.ajax({
                 method: "GET",
                 dataType: 'json',
-                async: false,
+                async: true,
                 url: apiPath + "get_campaign_details?userId=" + userId,
+                beforeSend: function(jqXHR, settings) {
+                  $("#cover").show();
+                  console.log("before send");
+                },
                 success: function (data) {
 
-                    var info = 'Campaign Start Date :' + data.report.startDate
-                    + '<br>'
-                    + 'Total Time Of Campaign :' + data.report.totalTime
-                    + '<br>'
-                    + 'Remaining Time Of Campaign :' + (data.report.totalTime - data.report.runTime)
-                    + '<br>'
-                    + 'Exhausted Time of Campaign : ' + data.report.runTime
-                    + '<br>'
-
-                    $("#reportinfo").append(info);
+                    
+                    console.log("success start");
+                    $("#camp-start-date").append(data.report.startDate);
+                    $("#camp-total-time").append(data.report.totalTime + " Mins");
+                    $("#camp-remaining-time").append((data.report.totalTime-data.report.runTime) + " Mins");
+                    $("#camp-exhausted-time").append(data.report.runTime + " Mins");
+                    $("#camp-run-distance").append(data.report.runDistance + " Kms");
                     
 
                     $.each(data.report.tableReport, function (key, value) {
@@ -63,120 +207,124 @@
 
                         $("#areawise").append(tableRow);
                     });
+                    console.log("success end");
                 },
                 error: function(jqXHR, textStatus){
                     console.log("error");
+                    
                     //
                     //
-                    //
+                },
+                complete: function() {
+                  $("#cover").hide();
+                  console.log("complete");
                 }
             });
         });
         
-    </script>
+</script>
 
 
 
 <script>
-        var poly;
-        var map;
-        var apiPath = "<%= @base_api %>";
-        var userId = $.cookie('userId');
-        var isMapLoaded = false;
-        $(function () {
-            $("#tabs").tabs({
-                activate: function () {
-                    if (!isMapLoaded){
-                        initMap();
-                        isMapLoaded = true;
-                    }
-                }
-            });
-            $("#txtStartDate").datepicker({ dateFormat: 'dd-mm-yy' });
-            $("#txtEndDate").datepicker({ dateFormat: 'dd-mm-yy' });
-            $("#map").height($(window).height() - 100);
+    var isMapLoaded = false;
+    var poly;
+    var map;
+    var apiPath = "<%= @base_api %>";
+    var userId = $.cookie('userId');
+    var trips = {};
 
-            $("#btnSubmit").click(function () {
-                // initMap();
-                fetchPolylines();
-            });            
-        });
+    function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: { lat: 28.63273841238931, lng: 77.21971853636205 }  // Center the map on CP, New Delhi.
+                });
+    }
 
-        function fetchPolylines() {
-            pageId = 1;
-            var lastTrip = {};
-            while(pageId!=0){
+    
+    $( document ).ready(function() {
+        $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+            if($(this).text() == 'Maps' && !isMapLoaded){
+                initMap();
+            }
+            isMapLoaded=true;
+    });
+        
+            
+    $("#poly-submit").click(function () {
+        $("#cover").show();
+        trips = {};
+        initMap();
+        fetchPolylines(0);  
+
+    }); 
+
+    $("#signout").click(function () {
+          $.removeCookie('userId');
+          window.location.href = "/";
+    });           
+    
+        
+    function fetchPolylines(pageId) {
                 
-                $.ajax({
+        $.ajax({
                 method: "GET",
                 dataType: 'json',
-                async: false,
-                url: apiPath + "get_polylines?userId=" + userId + "&pageId="+ pageId +"&startDate=" + $("#txtStartDate").val() + "&endDate=" + $("#txtEndDate").val(),
+                url: apiPath + "get_polylines?userId=" + userId + "&pageId="+ pageId +"&startDate=" + $("#date-picker-1").val() + "&endDate=" + $("#date-picker-2").val(),
                 success: function (data) {
                     arrLen = Object.keys(data.report).length;
 
                     if ($.isEmptyObject(data.report)) {
-                        pageId=0;
-                        addLine(lastTrip[0]);
+                        addLines(trips)
+                        $("#cover").hide();
                         return;
                     }
                     var tripIndex=0;
                     $.each(data.report, function (tripName, tripData) {
 
-                        if(tripIndex ==0){
-                            if(!$.isEmptyObject(lastTrip)){
-                                if(tripName in lastTrip){
-                                    tripData = lastTrip[tripName] + " " + tripData;
-                                }else{
-                                    addLine(lastTrip[0]);
-                                }
-                                delete lastTrip[tripName];
-                            }
-                        }
 
-                        if(tripIndex == arrLen-1){
-                            lastTrip[tripName] = tripData;
-                            tripIndex++;
-                            return;
+                        if(tripName in trips){
+                            trips[tripName] = trips[tripName] + " " + tripData;
+                        }else{
+                            trips[tripName] = tripData;
                         }
-                        
-                        addLine(tripData, tripIndex);
-                        tripIndex++;
-                        
+    
                     });
-                    pageId++;
+
+                    fetchPolylines(pageId+1);
+                    
                 },
                 error: function(jqXHR, textStatus ){
                     console.log("error");
-                    pageId=0;
+                    $("#cover").hide();
                 }
+        });
                 
-            });
                 
-                
-            }
-        }
+}
+        
 
-        function addLine(tripData, tripIndex, pageId){
-            var arrTripData = tripData.split(" ");
-            poly = new google.maps.Polyline({
+    function addLines(trips){
+            var pageId = 0;
+            for (var key in trips){
+                var arrTripData = trips[key].split(" ");
+                poly = new google.maps.Polyline({
                             strokeColor: '#000000',
                             strokeOpacity: 1.0,
                             strokeWeight: 3
-                            
                         });
 
-            poly.setMap(map);
-            var path = poly.getPath();
+                poly.setMap(map);
+                var path = poly.getPath();
 
-            for (var i = 0; i < arrTripData.length; i++) {
+                for (var i = 0; i < arrTripData.length; i++) {
                             var arrTripItem = arrTripData[i].split(",");
                             var coId = arrTripItem[0];
                             var lng = arrTripItem[1];
                             var lat = arrTripItem[2];
                             var latLng = new google.maps.LatLng(lat, lng);
 
-                            if (pageId == 1 && i == 0 && tripIndex==0)
+                            if (pageId == 1 && i == 0)
                                 map.panTo(latLng);
 
                             var marker = new google.maps.Marker({
@@ -190,10 +338,12 @@
                             });
                             path.push(latLng);
                             addListenerToMarker(marker, coId);
-                        }
-        }
+                }
+            }
+            pageId++;
+    }
 
-        function addListenerToMarker(marker, coId){
+    function addListenerToMarker(marker, coId){
             
             marker.addListener('click', function () {
                                 var thisMarker = this;
@@ -220,14 +370,10 @@
                             });
         }
 
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 12,
-                center: { lat: 28.63273841238931, lng: 77.21971853636205 }  // Center the map on CP, New Delhi.
-            });
-        }
+        
 
-    </script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5wf7Rinv6cHBcdQ-yUYTbpv8zEg2IeTA">
-    </script>
+        
+});
+
+</script>
+    
