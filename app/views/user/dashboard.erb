@@ -275,7 +275,7 @@
         $.ajax({
                 method: "GET",
                 dataType: 'json',
-                url: apiPath + "get_polylines?userId=" + userId + "&pageId="+ pageId +"&startDate=" + $("#date-picker-1").val() + "&endDate=" + $("#date-picker-2").val(),
+                url:  "/get_polylines?userId=" + userId + "&pageId="+ pageId +"&startDate=" + $("#date-picker-1").val() + "&endDate=" + $("#date-picker-2").val(),
                 success: function (data) {
                     arrLen = Object.keys(data.report).length;
 
@@ -355,7 +355,7 @@
                                 $.ajax({
                                     method: "GET",
                                     dataType: 'json',
-                                    url: apiPath + "get_coordiante_info?co_id=" + coId,
+                                    url: "/get_coordiante_info?co_id=" + coId,
                                     success: function (data) {
                                         var area = data.report["area"];
                                         var adUrl = data.report["adUrl"];
