@@ -3,6 +3,7 @@
     window.location.href = "/";
   }
 
+
 </script>
 
 <div id="cover"></div>
@@ -163,6 +164,8 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        $('#wrapper').height($(window).height()-92);
+        $('#sidebar-wrapper').height($(window).height()-92);
         $('#example-getting-started').multiselect({
             nonSelectedText: 'None',
             dropRight: 'true',
@@ -235,6 +238,7 @@
     var trips = {};
 
     function initMap() {
+            $("#map").height($(window).height()-92);
             map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 12,
                 center: { lat: 28.63273841238931, lng: 77.21971853636205 }  // Center the map on CP, New Delhi.
@@ -252,10 +256,11 @@
         
             
     $("#poly-submit").click(function () {
+
         $("#cover").show();
         trips = {};
         initMap();
-        fetchPolylines(0);  
+        fetchPolylines(1);  
 
     }); 
 

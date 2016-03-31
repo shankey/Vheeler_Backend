@@ -7,6 +7,7 @@
 	border: none;
 	border-radius: 0;
 	min-height: 50px;
+	height: 50px;
 	padding-left: 100px;
 	margin-bottom: 0px;
 	
@@ -60,8 +61,13 @@
 html, body{
 	font-family: 'Oxygen', sans-serif;
 	font-size: 14px;
-	height: 100%
+	height: 100vh;
+}
 
+body{
+	display:-webkit-flex;
+	display:flex;
+	flex-direction:column;
 }
 
 .page{
@@ -192,6 +198,8 @@ hr{
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    padding-left: 200px;
+    
 }
 
 #wrapper.toggled {
@@ -201,10 +209,10 @@ hr{
 #sidebar-wrapper {
 	margin-top: 2px;
     z-index: 999;
-    position: fixed;
+    position: absolute;
     left: 200px;
     width: 0;
-    height: 100%;
+    height: 100vh;
     margin-left: -200px;
     overflow-y: auto;
     background: #075c41;
@@ -281,10 +289,7 @@ hr{
 }
 
 
-    #wrapper {
-        padding-left: 200px;
-
-    }
+    
 
     #wrapper.toggled {
         padding-left: 0;
@@ -340,11 +345,20 @@ hr{
 }
 
 #map{
-	height: 100vh;
+	
+}
+
+#maps{
+	
 }
 
 .login-box > p > input {
 	color: black;
+}
+
+.tab-content{
+	
+	-webkit-flex:1;flex:1
 }
 
 
