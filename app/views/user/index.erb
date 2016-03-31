@@ -65,7 +65,7 @@
                 method: "GET",
                 dataType: 'json',
                 async: false,
-                url: apiPath + "login?userName=" + username + "&password=" + password ,
+                url: "/login?userName=" + username + "&password=" + password ,
                 beforeSend: function() {
                   $(".loading-icon").show();
                 },
