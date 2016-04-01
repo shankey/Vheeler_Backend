@@ -72,6 +72,7 @@ body{
 
 .page{
 	background: url("/banner.jpg") no-repeat 0 0;
+	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
@@ -361,5 +362,11 @@ hr{
 	-webkit-flex:1;flex:1
 }
 
+#poly-submit{
+	width: 100px;
+}
 
+.multiselect{
+	width: 100px;
+}
 

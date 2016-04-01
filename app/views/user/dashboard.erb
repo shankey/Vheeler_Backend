@@ -131,14 +131,12 @@
                 <li>
                     <label  class="control-label sidebar-left">Areas: 
                     </label>
-                    <div class="sidebar-right" style="width: 100px">
+                    <div class="sidebar-right">
                         <select  id="example-getting-started" multiple="multiple">
-                            <option value="cheese" selected>Cheese</option>
-                            <option value="tomatoes">Tomatoes</option>
-                            <option value="mozarella">Mozzarella</option>
-                            <option value="mushrooms">Mushrooms</option>
-                            <option value="pepperoni">Pepperoni</option>
-                            <option value="onions">Onions</option>
+                            <option value="ALL" selected>ALL</option>
+                            <% @areas.each do |area| %> 
+                            <option  id="<%= area.id %>" value="<%= area.area_info %>"><%= area.area_info %></option>
+                            <% end %>
                         </select>
                     </div>
 
