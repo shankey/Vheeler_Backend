@@ -56,10 +56,16 @@ class ReportController < ApplicationController
             ad_ids << campaign_area.ad_id
         end
 
-        area_ids_array = area_ids.split(",");
+        if(area_ids != nil)
+            area_ids_array = area_ids.split(",");
+            coordinates = Coordinate.where(area_id: area_ids_array).where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).where(ad_id: ad_ids).order(polyline: :asc).order(recordtime: :asc).page(page_id).per(500)
+        else
+            coordinates = Coordinate.where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).where(ad_id: ad_ids).order(polyline: :asc).order(recordtime: :asc).page(page_id).per(500)
+        end
+        
     
         
-        coordinates = Coordinate.where(area_id: area_ids_array).where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).where(ad_id: ad_ids).order(polyline: :asc).order(recordtime: :asc).page(page_id).per(500)
+        
         polyCoordinateMap = Hash.new
         
         coordinates.each do |co|
