@@ -44,18 +44,22 @@ class ReportController < ApplicationController
         response.headers['Access-Control-Allow-Origin'] = '*'
         user_id = params[:userId]
         page_id = params[:pageId]
+        area_ids = params[:areaIds]
         startdate = Date.parse(params[:startDate])
         enddate = Date.parse(params[:endDate])
         campaign = Campaign.where(user_id: user_id).first
+
         
         campaign_areas = CampaignArea.where(campaign_id: campaign.id).all
         ad_ids = Array.new
         campaign_areas.each do |campaign_area|
             ad_ids << campaign_area.ad_id
         end
+
+        area_ids_array = area_ids.split(",");
     
         
-        coordinates = Coordinate.where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).where(ad_id: ad_ids).order(polyline: :asc).order(recordtime: :asc).page(page_id).per(500)
+        coordinates = Coordinate.where(area_id: area_ids_array).where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).where(ad_id: ad_ids).order(polyline: :asc).order(recordtime: :asc).page(page_id).per(500)
         polyCoordinateMap = Hash.new
         
         coordinates.each do |co|

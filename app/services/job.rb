@@ -1,7 +1,7 @@
 class Job
 
-    def daily_report_aggregator_job (startdate, enddate)
-        
+    def self.daily_report_aggregator_job (startdate, enddate)
+        puts "starting job"
         ############# select all device_ids of vehicles ############
         a_device_ids = Coordinate.where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).select(:device_id).uniq
         
@@ -24,7 +24,7 @@ class Job
         
         ############# select all coordinates per car ###############
         device_ids.each do |device_id|
-            car_coordinates = Coordinate.where("device_id = ?", device_id).order(recordtime: :asc)
+            car_coordinates = Coordinate.where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).where("device_id = ?", device_id).order(recordtime: :asc)
             number = 1
             
             last_coordinate = nil;
@@ -59,11 +59,11 @@ class Job
         
     end
     
-    def get_polyline (date, device_id, number)
+    def self.get_polyline (date, device_id, number)
         date.strftime("%m_%d_%y") + "_" + device_id + "_" + number.to_s
     end
     
-    def add_time_and_distance(curr_coordinate, last_coordinate)
+    def self.add_time_and_distance(curr_coordinate, last_coordinate)
         point_a = Geokit::LatLng.new(last_coordinate.latitude, last_coordinate.longitude)
         point_b = Geokit::LatLng.new(curr_coordinate.latitude, curr_coordinate.longitude)
         
@@ -73,7 +73,7 @@ class Job
         CampaignArea.where(id: curr_coordinate.ad_id).where(area_id: curr_coordinate.area_id).update_all("time = time+" + time.to_s + "," + "distance = distance+" + distance.to_s)
     end
     
-    def get_user_id_for_coordinate(coordinate)
+    def self.get_user_id_for_coordinate(coordinate)
         return Ad.find(coordinate.ad_id).user_id
     end
     
