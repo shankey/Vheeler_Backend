@@ -323,11 +323,11 @@
                 for (var i = 0; i < arrTripData.length; i++) {
                             var arrTripItem = arrTripData[i].split(",");
                             var coId = arrTripItem[0];
-                            var lng = arrTripItem[1];
-                            var lat = arrTripItem[2];
+                            var lat = arrTripItem[1];
+                            var lng = arrTripItem[2];
                             var latLng = new google.maps.LatLng(lat, lng);
 
-                            if (pageId == 1 && i == 0)
+                            if (pageId == 0 && i == 0)
                                 map.panTo(latLng);
 
                             var marker = new google.maps.Marker({
