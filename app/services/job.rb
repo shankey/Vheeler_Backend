@@ -3,7 +3,7 @@ class Job
     def self.daily_report_aggregator_job (startdate, enddate)
         puts "starting job"
         ############# select all device_ids of vehicles ############
-        a_device_ids = Coordinate.where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).select(:device_id).uniq
+        a_device_ids = Coordinate.where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).where(processed: nil).select(:device_id).uniq
         
         device_ids = Array.new
         a_device_ids.each do |obj|
@@ -24,7 +24,7 @@ class Job
         
         ############# select all coordinates per car ###############
         device_ids.each do |device_id|
-            car_coordinates = Coordinate.where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).where("device_id = ?", device_id).order(recordtime: :asc)
+            car_coordinates = Coordinate.where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).where("device_id = ?", device_id).where(processed: nil).order(recordtime: :asc)
             number = 1
             
             last_coordinate = nil;
@@ -75,6 +75,11 @@ class Job
     
     def self.get_user_id_for_coordinate(coordinate)
         return Ad.find(coordinate.ad_id).user_id
+    end
+
+    def self.test
+        puts "i am running a scheduler"
+        
     end
     
 end

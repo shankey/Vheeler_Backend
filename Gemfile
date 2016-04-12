@@ -17,6 +17,7 @@ gem 'mysql'
 gem 'kaminari'
 gem 'geokit'
 gem 'nokogiri'
+gem 'whenever', :require => false
 gem 'sdoc',         '0.4.0', group: :doc
 
 group :development, :test do
