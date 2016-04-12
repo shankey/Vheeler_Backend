@@ -2,6 +2,7 @@ class AreaController < ApplicationController
     
     
     def area
+        logger.info "inside area"
         all_area = Area.all
         area_id_to_area_map = {}
         
