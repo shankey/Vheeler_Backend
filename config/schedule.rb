@@ -1,8 +1,7 @@
-set :environment, "development"
+set :environment, "production"
 set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log"}
 
 
-every 1.day, :at => '12:01 am' do
-  #runner Job.daily_report_aggregator_job Date.today.prev_day.prev_day, Date.today.prev_day
-  RAILS_ENV=production rake 'run_daily_job'
+every 1.day do
+  rake 'run_daily_job'
 end
