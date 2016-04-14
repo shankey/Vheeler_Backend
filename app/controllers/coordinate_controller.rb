@@ -22,8 +22,18 @@ class CoordinateController < ApplicationController
     def coordinate_batch
         logger.debug params
             obj = JSON.parse(params[:json], object_class: OpenStruct)
-            obj.li.each do |o|
-                puts o
+            
+            Coordinate.transaction do
+                obj.li.each do |o|
+                    co = Coordinate.new
+                    co.latitude = o.coordinate.latitude
+                    co.longitude = o.coordinate.longitude
+                    co.area_id = o.areaId
+                    co.ad_id = o.adId
+                    co.recordtime = o.timestamp
+                    co.device_id = obj.deviceId
+                    Coordinate.create(co.attributes)
+                end
             end
             render :json => {:message => "Coordinate Saved"},
                 :status => 200
