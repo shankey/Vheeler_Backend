@@ -1,12 +1,15 @@
 class CoordinateController < ApplicationController
-    
+    include CoordinateHelper
+
     skip_before_filter :verify_authenticity_token
+
+    
     
     def coordinate
         logger.debug params
        
             obj = JSON.parse(params[:json], object_class: OpenStruct)
-            
+            logger.info obj
             co = Coordinate.new
             co.latitude = obj.coordinate.latitude
             co.longitude = obj.coordinate.longitude
@@ -14,6 +17,12 @@ class CoordinateController < ApplicationController
             co.ad_id = obj.adId
             co.recordtime = obj.timestamp
             co.device_id = obj.deviceId
+
+            co_prev = get_previous_coordinate(co)
+            logger.info "previous coordinate " + co_prev.inspect
+            calculate_time_and_distance(co_prev,co)
+
+
             co.save
             render :json => {:message => "Coordinate Saved"},
                 :status => 200
@@ -40,7 +49,7 @@ class CoordinateController < ApplicationController
     end
     
     def coordinate_markers
-        user_id = params[:user_d]
+        user_id = params[:user_id]
         ads = Ad.where(user_id: user_id)
         ad_ids = Array.new
         ads.each do |ad|

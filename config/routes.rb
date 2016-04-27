@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   get '/get_coordiante_info' => 'report#get_coordiante_info'
   
   get '/login' => 'user#login'
+
+  post '/campaign_ingest' => 'campaign#campaign_ingest'
   
 end

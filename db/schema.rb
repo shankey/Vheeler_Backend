@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321073835) do
+ActiveRecord::Schema.define(version: 20160426195948) do
 
   create_table "ads", force: :cascade do |t|
     t.integer  "area_id",    limit: 4
@@ -37,22 +37,39 @@ ActiveRecord::Schema.define(version: 20160321073835) do
     t.datetime "updated_at",                                     null: false
   end
 
-  create_table "campaign_areas", force: :cascade do |t|
+  create_table "campaign_infos", force: :cascade do |t|
     t.integer  "campaign_id", limit: 4
     t.integer  "area_id",     limit: 4
     t.integer  "ad_id",       limit: 4
-    t.decimal  "time",                  precision: 10, scale: 2
+    t.decimal  "total_time",            precision: 10, scale: 2
     t.decimal  "distance",              precision: 10, scale: 2
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
+    t.integer  "days",        limit: 4
   end
+
+  add_index "campaign_infos", ["ad_id", "area_id", "campaign_id"], name: "index_campaign_infos_on_ad_id_and_area_id_and_campaign_id", unique: true, using: :btree
+
+  create_table "campaign_runs", force: :cascade do |t|
+    t.integer "campaign_info_id", limit: 4
+    t.date    "date"
+    t.decimal "total_time",                 precision: 10, scale: 2, default: 0.0
+    t.decimal "exhausted_time",             precision: 10, scale: 2, default: 0.0
+    t.decimal "distance",                   precision: 10, scale: 5, default: 0.0
+  end
+
+  add_index "campaign_runs", ["campaign_info_id", "date"], name: "index_campaign_runs_on_campaign_info_id_and_date", unique: true, using: :btree
 
   create_table "campaigns", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
-    t.decimal  "time",                 precision: 10, scale: 2
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.decimal  "time",                   precision: 10, scale: 2
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.date     "start_date"
+    t.string   "name",       limit: 255
   end
+
+  add_index "campaigns", ["user_id", "name"], name: "index_campaigns_on_user_id_and_name", unique: true, using: :btree
 
   create_table "coordinates", force: :cascade do |t|
     t.string   "user_id",    limit: 255
@@ -67,6 +84,8 @@ ActiveRecord::Schema.define(version: 20160321073835) do
     t.string   "device_id",  limit: 255
     t.integer  "processed",  limit: 4
   end
+
+  add_index "coordinates", ["device_id", "recordtime"], name: "index_coordinates_on_device_id_and_recordtime", using: :btree
 
   create_table "ncoordinates", force: :cascade do |t|
     t.string   "user_id",    limit: 255
