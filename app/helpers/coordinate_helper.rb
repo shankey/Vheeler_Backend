@@ -76,8 +76,13 @@ module CoordinateHelper
     end
 
     def get_user_id_from_coordinate (coo)
-    	ad = Ad.find(coo.ad_id)
-    	return ad.user_id
+        sql = "LEFT JOIN campaign_infos ON campaign_infos.campaign_id=campaigns.id where campaign_infos.ad_id=%ad_id and campaign_infos.area_id=%area_id"
+
+        sql.sub! '%ad_id', coo.ad_id.to_s
+        sql.sub! '%area_id', coo.area_id.to_s
+
+    	c = Campaign.joins(sql).take
+    	return c.user_id
     end
 
 
