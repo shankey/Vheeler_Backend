@@ -91,7 +91,14 @@ class ReportController < ApplicationController
         
         eci = EntityCoordinateInfo.new
         eci.area = AreaInfo.where(area_id: coo.area_id).first.area_info
-        eci.adUrl = Ad.find(coo.ad_id).url
+
+        ## hack and needs to be fixed
+        if (coo.ad_id == -1)
+            ad_id = 7;
+        else
+            ad_id = coo.ad_id
+        end
+        eci.adUrl = Ad.find(ad_id).url
         eci.polyline = coo.polyline
         eci.timestamp = coo.recordtime
         
