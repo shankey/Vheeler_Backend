@@ -49,22 +49,14 @@ class ReportController < ApplicationController
         enddate = Date.parse(params[:endDate])
         campaign = Campaign.where(user_id: user_id).first
 
-        
-        campaign_areas = CampaignArea.where(campaign_id: campaign.id).all
+        campaign_infos = CampaignInfo.where(campaign_id: campaign.id).all
+
         ad_ids = Array.new
-        campaign_areas.each do |campaign_area|
-            ad_ids << campaign_area.ad_id
+        campaign_infos.each do |campaign_info|
+            ad_ids << campaign_info.ad_id
         end
 
-        if(area_ids != nil)
-            area_ids_array = area_ids.split(",");
-            coordinates = Coordinate.where(area_id: area_ids_array).where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).where(ad_id: ad_ids).where.not(processed: nil).order(polyline: :asc).order(recordtime: :asc).page(page_id).per(500)
-        else
-            coordinates = Coordinate.where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).where(ad_id: ad_ids).where.not(processed: nil).order(polyline: :asc).order(recordtime: :asc).page(page_id).per(500)
-        end
-        
-    
-        
+        coordinates = Coordinate.where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).where(ad_id: ad_ids).order(polyline: :asc).order(recordtime: :asc).page(page_id).per(500)
         
         polyCoordinateMap = Hash.new
         

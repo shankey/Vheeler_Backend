@@ -4,7 +4,7 @@ module CoordinateHelper
         enddate = co.recordtime
         startdate = enddate.to_date
 
-        co_prev = Coordinate.where("recordtime > :startdate AND recordtime <= :enddate", {startdate: startdate, enddate: enddate}).order(recordtime: :desc).limit(1).take
+        co_prev = Coordinate.where("recordtime > :startdate AND recordtime <= :enddate AND device_id = :device_id", {startdate: startdate, enddate: enddate, device_id: co.device_id}).order(recordtime: :desc).limit(1).take
         # sql = "SELECT id, latitude, longitude, polyline, recordtime,  ad_id, area_id, device_id, MAX(`coordinates`.`recordtime`) from `coordinates` WHERE (recordtime >= '%startdate' AND recordtime < '%enddate') AND (device_id = '%device_id')"
         # sql.sub! '%startdate', startdate.to_s
         # sql.sub! '%enddate', enddate.to_s
