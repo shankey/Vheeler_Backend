@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/area' => 'area#area'
   
   get '/ads' => 'ads#ads'
+  get '/get_all_campaigns' => 'campaign#get_all_campaigns'
   
   get '/versions' => 'application#versions'
   

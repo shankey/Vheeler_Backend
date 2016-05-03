@@ -2,6 +2,42 @@ class CampaignController < ApplicationController
 
 	skip_before_filter :verify_authenticity_token
 
+	def get_all_campaigns
+		all_campaigns = CampaignInfo.get_all_active_campaigns
+
+		campaigns_hash = Hash.new
+		all_campaigns.each do |campaign|
+
+			campaign_id = campaign.campaign_id
+
+			if(campaigns_hash.key?(campaign_id))
+				area_ads = campaigns_hash[campaign_id]
+			else
+				area_ads = Array.new
+				campaigns_hash[campaign_id] = area_ads
+			end
+			
+			area_ad = EntityAreaAd.new
+			area_ad.areaId = campaign.area_id
+			area_ad.adId = campaign.ad_id
+			area_ads << area_ad
+		end
+
+		entity_campaigns_array = Array.new
+
+		campaigns_hash.each do |key,value|
+			puts key
+			puts value
+			ec = EntityCampaigns.new
+			ec.campaignId = key
+			ec.areaAds = value
+			entity_campaigns_array << ec
+		end
+
+		render :json => entity_campaigns_array.to_json,
+                :status => 200
+	end
+
 	def campaign_ingest
 		Campaign.transaction do
 			obj = JSON.parse(params[:json], object_class: OpenStruct)

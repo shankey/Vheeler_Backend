@@ -36,6 +36,9 @@ module CoordinateHelper
     end
 
     def calculate_time_and_distance (co_prev, co)
+        logger.info "get_timeanddistance " 
+        logger.info co.inspect
+        run=true
         if(co_prev == nil || co_prev.polyline == nil || co_prev.polyline.empty?)
             poly_id = get_polyline(co.recordtime, get_unique_string)
         else
@@ -49,16 +52,20 @@ module CoordinateHelper
                     # coordinate came after 2 minutes so a new polyline. Not sure what happened in these 2 minutes. This should never happen 
                     poly_id = get_polyline(co.recordtime, get_unique_string)
                     logger.info ("LOST-COORDINATE" + co.to_s)
-                    
+               
+        logger.info "before calling"
+        logger.info co.inspect     
         elsif(get_user_id_from_coordinate(co_prev) != get_user_id_from_coordinate(co)) # ad change 
                     poly_id = get_polyline(co.recordtime, get_unique_string)
-                    add_time_and_distance(co,co_prev)
+                    run=add_time_and_distance(co,co_prev)
         else
-                    add_time_and_distance(co,co_prev)
+                    run=add_time_and_distance(co,co_prev)
         end
 
         co.polyline = poly_id
         co.processed = 1
+
+        return run
 
     end
 
@@ -73,9 +80,19 @@ module CoordinateHelper
         
         ci = CampaignInfo.where(ad_id: curr_coordinate.ad_id).where(area_id: curr_coordinate.area_id).take
         CampaignRun.where(campaign_info_id: ci.id).where(date: curr_coordinate.recordtime.to_date).update_all("exhausted_time = exhausted_time+" + time.to_s + "," + "distance = distance+" + distance.to_s)
+        
+        cr = CampaignRun.where(campaign_info_id: ci.id).where(date: curr_coordinate.recordtime.to_date).take
+        
+        if(cr.exhausted_time < cr.total_time)
+            return true
+        else
+            return false
+        end
     end
 
     def get_user_id_from_coordinate (coo)
+        logger.info "get_userid " 
+        logger.info coo.inspect
         sql = "LEFT JOIN campaign_infos ON campaign_infos.campaign_id=campaigns.id where campaign_infos.ad_id=%ad_id and campaign_infos.area_id=%area_id"
 
         sql.sub! '%ad_id', coo.ad_id.to_s

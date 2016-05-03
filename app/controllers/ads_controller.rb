@@ -2,6 +2,9 @@ class AdsController < ApplicationController
     
     def ads
         puts params
+
+        
+
         ads = Ad.all
         entity_ads = Array.new
         ads.each do |ad|
@@ -14,4 +17,6 @@ class AdsController < ApplicationController
         render :json => JSON.pretty_generate({:ads => JSON.parse(entity_ads.to_json)}),
              :status => 200
     end
+
+
 end

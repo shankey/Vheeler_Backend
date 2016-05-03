@@ -18,33 +18,41 @@ class CoordinateController < ApplicationController
             co.recordtime = obj.timestamp
             co.device_id = obj.deviceId
 
-            co_prev = get_previous_coordinate(co)
-            logger.info "previous coordinate " + co_prev.inspect
-            calculate_time_and_distance(co_prev,co)
-
+            run = process_coordinate(co)
 
             co.save
-            render :json => {:message => "Coordinate Saved"},
+            render :json => {:run => run},
                 :status => 200
+    end
+
+    def process_coordinate(co)
+        co_prev = get_previous_coordinate(co)
+        logger.info "previous coordinate " + co_prev.inspect
+        run = calculate_time_and_distance(co_prev,co)
+        return run
+
     end
     
     def coordinate_batch
         logger.debug params
             obj = JSON.parse(params[:json], object_class: OpenStruct)
             
-            Coordinate.transaction do
-                obj.li.each do |o|
-                    co = Coordinate.new
-                    co.latitude = o.coordinate.latitude
-                    co.longitude = o.coordinate.longitude
-                    co.area_id = o.areaId
-                    co.ad_id = o.adId
-                    co.recordtime = o.timestamp
-                    co.device_id = obj.deviceId
-                    Coordinate.create(co.attributes)
-                end
+            obj.li.each do |o|
+                co = Coordinate.new
+                co.latitude = o.coordinate.latitude
+                co.longitude = o.coordinate.longitude
+                co.area_id = o.areaId
+                co.ad_id = o.adId
+                co.recordtime = o.timestamp
+                co.device_id = obj.deviceId
+                
+                logger.info co.inspect
+                process_coordinate(co)
+
+                co.save
             end
-            render :json => {:message => "Coordinate Saved"},
+            
+            render :json => {:message => "Coordinate Batch Saved"},
                 :status => 200
     end
     
