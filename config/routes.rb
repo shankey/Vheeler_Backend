@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   
   get '/ads' => 'ads#ads'
   get '/get_all_campaigns' => 'campaign#get_all_campaigns'
+  get 'get_campaign_schedule' => 'campaign#get_campaign_schedule'
+  get 'get_active_campaigns' => 'campaign#get_active_campaigns'
   
   get '/versions' => 'application#versions'
   

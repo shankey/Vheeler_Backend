@@ -1,9 +1,10 @@
 class CampaignInfo < ActiveRecord::Base
+	belongs_to :campaign
+	belongs_to :ad
+	has_many :campaign_run
 
 	def self.get_all_active_campaigns
-		sql = "LEFT JOIN campaigns ON campaign_infos.campaign_id=campaigns.id where campaigns.active=1"
-
-    	all_active_campaigns = CampaignInfo.joins(sql).all
+		all_active_campaigns=CampaignInfo.joins(:campaign, :ad).includes(:campaign, :ad).where('campaigns.active=1')
     	return all_active_campaigns
 	end
 end
