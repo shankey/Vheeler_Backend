@@ -21,6 +21,7 @@ class CampaignController < ApplicationController
 			area_ad = EntityAreaAd.new
 			area_ad.areaId = campaign.area_id
 			area_ad.adId = campaign.ad_id
+			area_ad.version = campaign.version
 			area_ads << area_ad
 
 			ads_hash[campaign.ad.id] = campaign.ad.url
@@ -48,7 +49,7 @@ class CampaignController < ApplicationController
 			entity_ads_array << ea
 		end
 
-		render :json => {:campaign => JSON.parse(entity_campaigns_array.to_json),
+		render :json => {:campaigns => JSON.parse(entity_campaigns_array.to_json),
 						:ads => JSON.parse(entity_ads_array.to_json)
 						},
                 :status => 200

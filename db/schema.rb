@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503063247) do
+ActiveRecord::Schema.define(version: 20160505142231) do
 
   create_table "ads", force: :cascade do |t|
     t.integer  "area_id",    limit: 4
@@ -43,9 +43,10 @@ ActiveRecord::Schema.define(version: 20160503063247) do
     t.integer  "ad_id",       limit: 4
     t.decimal  "total_time",            precision: 10, scale: 2
     t.decimal  "distance",              precision: 10, scale: 2
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
+    t.datetime "created_at",                                                 null: false
+    t.datetime "updated_at",                                                 null: false
     t.integer  "days",        limit: 4
+    t.integer  "version",     limit: 4,                          default: 1
   end
 
   add_index "campaign_infos", ["ad_id", "area_id", "campaign_id"], name: "index_campaign_infos_on_ad_id_and_area_id_and_campaign_id", unique: true, using: :btree

@@ -1,5 +1,5 @@
 class EntityAreaAd
-    attr_accessor :areaId, :adId, :schedule
+    attr_accessor :areaId, :adId, :version, :schedule
 
     def state
     	[areaId, adId, schedule]
