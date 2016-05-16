@@ -57,10 +57,35 @@ class CampaignController < ApplicationController
 
 	def get_campaign_schedule
 		obj = JSON.parse(params[:json], object_class: OpenStruct)
-		campaign_ids = obj.campaignIds
-		logger.info campaign_ids
+		campaignsInput = obj.campaigns
+		logger.info campaignsInput
+
+		sql = nil
+		obj.campaigns.each do |campaign|
+			if(sql != nil)
+				sql = sql + " or "
+			end
+			sql_template = "(area_id=%area_id and ad_id=%ad_id and campaign_id=%campaign_id)"
+			sql_template.sub!('%area_id',campaign.areaId.to_s)
+			sql_template.sub!('%ad_id',campaign.adId.to_s)
+			sql_template.sub!('%campaign_id',campaign.campaignId.to_s)
+			
+			if(sql==nil)
+				sql = sql_template
+			else
+				sql = sql + sql_template
+			end
+			
+		end
+		
+		logger.info sql
+
+		campaign_runs = CampaignRun.joins(:campaign_info).includes(:campaign_info).where(sql).all
+		logger.info campaign_runs.inspect
+
+
 		campaigns_hash = Hash.new
-		campaign_runs = CampaignRun.get_campaign_schedule(campaign_ids)
+		
 		campaign_runs.each do |campaign_run|
 
 			campaign_id = campaign_run.campaign_info.campaign.id
@@ -108,7 +133,7 @@ class CampaignController < ApplicationController
 			entity_campaigns_array << ec
 		end
 
-		render :json => {:campaign => JSON.parse(entity_campaigns_array.to_json),
+		render :json => {:campaigns => JSON.parse(entity_campaigns_array.to_json),
 						},
                 :status => 200
 	end
