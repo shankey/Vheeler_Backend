@@ -79,12 +79,10 @@ class CampaignController < ApplicationController
 			end
 			
 		end
-
-		sql = sql + " and active=1"
 		
 		logger.info sql
 
-		campaign_runs = CampaignRun.joins(:campaign_info => :campaign).includes(:campaign_info => :campaign).where(sql).all
+		campaign_runs = CampaignRun.joins(:campaign_info => :campaign).includes(:campaign_info => :campaign).where(sql).where(:campaigns => {:active => 1}).all
 		logger.info campaign_runs.inspect
 
 
