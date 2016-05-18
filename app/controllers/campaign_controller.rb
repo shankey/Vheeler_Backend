@@ -102,6 +102,7 @@ class CampaignController < ApplicationController
 			area_ad = EntityAreaAd.new
 			area_ad.areaId = campaign_run.campaign_info.area_id
 			area_ad.adId = campaign_run.campaign_info.ad_id
+			area_ad.campaignInfoId = campaign_run.campaign_info.id
 
 			if(area_ads.key?(area_ad))
 				area_ad_schedule = area_ads[area_ad]
