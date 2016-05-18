@@ -19,9 +19,11 @@ class CampaignController < ApplicationController
 			end
 			
 			area_ad = EntityAreaAd.new
+			area_ad.campaignInfoId = campaign.id
 			area_ad.areaId = campaign.area_id
 			area_ad.adId = campaign.ad_id
 			area_ad.version = campaign.version
+			area_ad.active = campaign.active
 			area_ads << area_ad
 
 			ads_hash[campaign.ad.id] = campaign.ad.url
@@ -77,10 +79,12 @@ class CampaignController < ApplicationController
 			end
 			
 		end
+
+		sql = sql + " and active=1"
 		
 		logger.info sql
 
-		campaign_runs = CampaignRun.joins(:campaign_info).includes(:campaign_info).where(sql).all
+		campaign_runs = CampaignRun.joins(:campaign_info => :campaign).includes(:campaign_info => :campaign).where(sql).all
 		logger.info campaign_runs.inspect
 
 
@@ -159,7 +163,6 @@ class CampaignController < ApplicationController
 				ci.ad_id = ad.adId
 				ci.total_time = ad.time
 				ci.save!
-
 
 				ci = CampaignInfo.where(campaign_id: campaign.id).where(area_id: ad.areaId).where(ad_id: ad.adId).take
 

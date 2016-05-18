@@ -1,5 +1,5 @@
 class EntityAreaAd
-    attr_accessor :areaId, :adId, :version, :schedule
+    attr_accessor :campaignInfoId , :areaId, :adId, :version, :schedule, :active
 
     def state
     	[areaId, adId, schedule]
