@@ -90,7 +90,7 @@ class CampaignController < ApplicationController
 			campaign_runs << campaign_run
 		end		
 
-		render :json => {:campaigns => JSON.parse(campaign_runs.to_json),
+		render :json => {:campaignSchedules => JSON.parse(campaign_runs.to_json),
 						},
                 :status => 200
 	end
