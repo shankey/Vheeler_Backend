@@ -54,11 +54,11 @@ class CampaignController < ApplicationController
 
 	def get_campaign_schedule
 		obj = JSON.parse(params[:json], object_class: OpenStruct)
-		campaignsInput = obj.campaigns
+		campaignsInput = obj.campaignInfoIds
 		logger.info "get_campaign_schedule input = " + campaignsInput.inspect
 
 		campaign_info_ids = Array.new
-		obj.campaigns.each do |campaign|
+		obj.campaignInfoIds.each do |campaign|
 			campaign_info_ids << campaign.campaignInfoId
 		end
 		
