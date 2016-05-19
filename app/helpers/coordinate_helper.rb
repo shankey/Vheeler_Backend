@@ -35,7 +35,7 @@ module CoordinateHelper
         return co_prev
     end
 
-    def calculate_time_and_distance (co_prev, co)
+    def calculate_time_and_distance (co_prev, co, campaign_info_id)
         logger.info "get_timeanddistance " 
         logger.info co.inspect
         run=true
@@ -57,9 +57,9 @@ module CoordinateHelper
         logger.info co.inspect     
         elsif(get_user_id_from_coordinate(co_prev) != get_user_id_from_coordinate(co)) # ad change 
                     poly_id = get_polyline(co.recordtime, get_unique_string)
-                    run=add_time_and_distance(co,co_prev)
+                    run=add_time_and_distance(co,co_prev, campaign_info_id)
         else
-                    run=add_time_and_distance(co,co_prev)
+                    run=add_time_and_distance(co,co_prev, campaign_info_id)
         end
 
         co.polyline = poly_id
@@ -70,7 +70,7 @@ module CoordinateHelper
     end
 
 
-    def add_time_and_distance(curr_coordinate, last_coordinate)
+    def add_time_and_distance(curr_coordinate, last_coordinate, campaign_info_id)
         logger.info "insdie add time and distance"
         point_a = Geokit::LatLng.new(last_coordinate.latitude, last_coordinate.longitude)
         point_b = Geokit::LatLng.new(curr_coordinate.latitude, curr_coordinate.longitude)
@@ -78,7 +78,7 @@ module CoordinateHelper
         time = curr_coordinate.recordtime - last_coordinate.recordtime
         distance = point_a.distance_to(point_b, options = {:units=>:kms})
         
-        ci = CampaignInfo.where(ad_id: curr_coordinate.ad_id).where(area_id: curr_coordinate.area_id).take
+        ci = CampaignInfo.where(id: campaign_info_id).take
         CampaignRun.where(campaign_info_id: ci.id).where(date: curr_coordinate.recordtime.to_date).update_all("exhausted_time = exhausted_time+" + time.to_s + "," + "distance = distance+" + distance.to_s)
         
         cr = CampaignRun.where(campaign_info_id: ci.id).where(date: curr_coordinate.recordtime.to_date).take

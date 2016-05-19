@@ -1,4 +1,4 @@
-class EntityAreaAd
+class EntityCampaignInfo
     attr_accessor :campaignInfoId , :areaId, :adId, :version, :schedule, :active
 
     def state

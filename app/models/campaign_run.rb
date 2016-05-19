@@ -8,4 +8,8 @@ class CampaignRun < ActiveRecord::Base
 		
     	return campaign_schedules
 	end
+
+	def self.get_campaign_runs_by_campaign_info_ids (campaign_info_ids)
+		CampaignRun.where(campaign_info_id: campaign_info_ids).all
+	end
 end

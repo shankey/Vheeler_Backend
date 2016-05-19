@@ -1,3 +1,3 @@
 class EntityCampaigns
-    attr_accessor :campaignId, :areaAds
+    attr_accessor :campaignId, :campaignInfos
 end

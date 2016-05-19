@@ -7,36 +7,31 @@ class CampaignController < ApplicationController
 
 		campaigns_hash = Hash.new
 		ads_hash = Hash.new
-		all_campaigns.each do |campaign|
+		all_campaigns.each do |campaign_info|
 
-			campaign_id = campaign.campaign_id
+			campaign_id = campaign_info.campaign_id
 
-			if(campaigns_hash.key?(campaign_id))
-				area_ads = campaigns_hash[campaign_id]
-			else
-				area_ads = Array.new
-				campaigns_hash[campaign_id] = area_ads
+			if(!campaigns_hash.key?(campaign_id))
+				campaigns_hash[campaign_id] = Array.new
 			end
 			
-			area_ad = EntityAreaAd.new
-			area_ad.campaignInfoId = campaign.id
-			area_ad.areaId = campaign.area_id
-			area_ad.adId = campaign.ad_id
-			area_ad.version = campaign.version
-			area_ad.active = campaign.active
-			area_ads << area_ad
+			entity_campaign_info = EntityCampaignInfo.new
+			entity_campaign_info.campaignInfoId = campaign_info.id
+			entity_campaign_info.areaId = campaign_info.area_id
+			entity_campaign_info.adId = campaign_info.ad_id
+			entity_campaign_info.version = campaign_info.version
+			entity_campaign_info.active = campaign_info.active
+			campaigns_hash[campaign_id] << entity_campaign_info
 
-			ads_hash[campaign.ad.id] = campaign.ad.url
+			ads_hash[campaign_info.ad.id] = campaign_info.ad.url
 		end
 
 		entity_campaigns_array = Array.new
 
 		campaigns_hash.each do |key,value|
-			puts key
-			puts value
 			ec = EntityCampaigns.new
 			ec.campaignId = key
-			ec.areaAds = value
+			ec.campaignInfos = value
 			entity_campaigns_array << ec
 		end
 
@@ -60,84 +55,42 @@ class CampaignController < ApplicationController
 	def get_campaign_schedule
 		obj = JSON.parse(params[:json], object_class: OpenStruct)
 		campaignsInput = obj.campaigns
-		logger.info campaignsInput
+		logger.info "get_campaign_schedule input = " + campaignsInput.inspect
 
-		sql = nil
+		campaign_info_ids = Array.new
 		obj.campaigns.each do |campaign|
-			if(sql != nil)
-				sql = sql + " or "
-			end
-			sql_template = "(area_id=%area_id and ad_id=%ad_id and campaign_id=%campaign_id)"
-			sql_template.sub!('%area_id',campaign.areaId.to_s)
-			sql_template.sub!('%ad_id',campaign.adId.to_s)
-			sql_template.sub!('%campaign_id',campaign.campaignId.to_s)
-			
-			if(sql==nil)
-				sql = sql_template
-			else
-				sql = sql + sql_template
-			end
-			
+			campaign_info_ids << campaign.campaignInfoId
 		end
 		
-		logger.info sql
 
-		campaign_runs = CampaignRun.joins(:campaign_info => :campaign).includes(:campaign_info => :campaign).where(sql).where(:campaigns => {:active => 1}).all
+		campaign_runs = CampaignRun.get_campaign_runs_by_campaign_info_ids(campaign_info_ids)
 		logger.info campaign_runs.inspect
 
-
-		campaigns_hash = Hash.new
+		campaing_info_id_hash = Hash.new
 		
 		campaign_runs.each do |campaign_run|
+			schedule = EntitySchedule.new
 
-			campaign_id = campaign_run.campaign_info.campaign.id
-
-			if(campaigns_hash.key?(campaign_id))
-				area_ads = campaigns_hash[campaign_id]
-			else
-				area_ads = Hash.new
-				campaigns_hash[campaign_id] = area_ads
-			end
+			schedule.date = campaign_run.date
+			schedule.totalTime = campaign_run.total_time
 			
-			area_ad = EntityAreaAd.new
-			area_ad.areaId = campaign_run.campaign_info.area_id
-			area_ad.adId = campaign_run.campaign_info.ad_id
-			area_ad.campaignInfoId = campaign_run.campaign_info.id
-			area_ad.active = campaign_run.campaign_info.active
-
-			if(area_ads.key?(area_ad))
-				area_ad_schedule = area_ads[area_ad]
+			if(campaing_info_id_hash.key?(campaign_run.campaign_info_id))
+				campaing_info_id_hash[campaign_run.campaign_info_id] << schedule
 			else
-				area_ad_schedule = Array.new
-				area_ads[area_ad] = area_ad_schedule
+				campaing_info_id_hash[campaign_run.campaign_info_id] = Array.new
+				campaing_info_id_hash[campaign_run.campaign_info_id] << schedule
 			end
-
-			sch = EntitySchedule.new
-			sch.date = campaign_run.date
-			sch.totalTime = campaign_run.total_time
-			area_ad_schedule << sch
-
 		end
 
-		entity_campaigns_array = Array.new
+		campaign_runs = Array.new
+		campaing_info_id_hash.each do |key, value|
+			campaign_run = EntityCampaignRun.new
+			campaign_run.campaignInfoId = key
+			campaign_run.schedule = value
+			campaign_runs << campaign_run
+		end		
 
-		campaigns_hash.each do |key, value|
-			logger.info key
-			ec = EntityCampaigns.new
-			ec.campaignId = key
-
-			area_ads = Array.new
-			value.each do |key, val|
-				key.schedule = val
-				area_ads << key
-			end
-
-			ec.areaAds = area_ads
-			
-			entity_campaigns_array << ec
-		end
-
-		render :json => {:campaigns => JSON.parse(entity_campaigns_array.to_json),
+		render :json => {:campaigns => JSON.parse(campaign_runs.to_json),
 						},
                 :status => 200
 	end

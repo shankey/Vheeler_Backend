@@ -18,17 +18,17 @@ class CoordinateController < ApplicationController
             co.recordtime = obj.timestamp
             co.device_id = obj.deviceId
 
-            run = process_coordinate(co)
+            run = process_coordinate(co, obj.campaignInfoId)
 
             co.save
             render :json => {:run => run},
                 :status => 200
     end
 
-    def process_coordinate(co)
+    def process_coordinate(co, campaign_info_id)
         co_prev = get_previous_coordinate(co)
         logger.info "previous coordinate " + co_prev.inspect
-        run = calculate_time_and_distance(co_prev,co)
+        run = calculate_time_and_distance(co_prev,co,campaign_info_id)
         return run
 
     end
