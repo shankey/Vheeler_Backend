@@ -137,37 +137,34 @@ class CampaignController < ApplicationController
                 :status => 200
 	end
 
-	def get_active_campaigns
+	def get_exhausted_campaign_runs
 		obj = JSON.parse(params[:json], object_class: OpenStruct)
+		campaignsInput = obj.campaignInfoIds
+		logger.info "get_campaign_schedule input = " + campaignsInput.inspect
+
 		sql = nil
-		obj.campaigns.each do |campaign|
-			if(sql != nil)
-				sql = sql + " or "
-			end
-			sql_template = "(area_id=%area_id and ad_id=%ad_id and campaign_id=%campaign_id and date='%date')"
-			sql_template.sub!('%area_id',campaign.areaId.to_s)
-			sql_template.sub!('%ad_id',campaign.adId.to_s)
-			sql_template.sub!('%campaign_id',campaign.campaignId.to_s)
-			sql_template.sub!('%date',campaign.date.to_s)
-			if(sql==nil)
+
+		obj.exhaustedCampaignList.each do |exhausted_campaign|
+			sql_template = "(campaign_info_id=%campaign_info_id and date='%date')"
+			sql_template.sub!("%campaign_info_id", exhausted_campaign.campaignInfoId.to_s)
+			sql_template.sub!("%date", exhausted_campaign.date.to_s)
+
+			if(sql == nil)
 				sql = sql_template
 			else
-				sql = sql + sql_template
+				sql = sql + " or " + sql_template
 			end
-			
 		end
 		
 		logger.info sql
 
-		campaign_runs = CampaignRun.joins(:campaign_info).includes(:campaign_info).where(sql).all
+		campaign_runs = CampaignRun.where(sql).all
 		logger.info campaign_runs.inspect
 
 		campaign_actives = Array.new
 		campaign_runs.each do |cr|
 			ca = EntityCampaignActive.new
-			ca.campaignId = cr.campaign_info.campaign_id
-			ca.areaId = cr.campaign_info.area_id
-			ca.adId = cr.campaign_info.ad_id
+			ca.campaignInfoId = cr.campaign_info_id
 
 			if(cr.exhausted_time>=cr.total_time)
 				ca.active = 0

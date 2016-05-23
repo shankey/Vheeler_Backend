@@ -1,3 +1,3 @@
 class EntityCampaignActive
-    attr_accessor :campaignId, :areaId, :adId, :active
+    attr_accessor :campaignInfoId, :active
 end
