@@ -158,24 +158,27 @@ class CampaignController < ApplicationController
 		
 		logger.info sql
 
-		campaign_runs = CampaignRun.where(sql).all
-		logger.info campaign_runs.inspect
+		campaign_runs = nil
+		if(sql != nil)
+			campaign_runs = CampaignRun.where(sql).all
+			logger.info campaign_runs.inspect
 
-		campaign_actives = Array.new
-		campaign_runs.each do |cr|
-			ca = EntityCampaignActive.new
-			ca.campaignInfoId = cr.campaign_info_id
+			campaign_actives = Array.new
+			campaign_runs.each do |cr|
+				ca = EntityCampaignActive.new
+				ca.campaignInfoId = cr.campaign_info_id
+				ca.date = cr.date
 
-			if(cr.exhausted_time>=cr.total_time)
-				ca.active = 0
-			else
-				ca.active=1
+				if(cr.exhausted_time>=cr.total_time)
+					ca.active = 0
+				else
+					ca.active=1
+				end
+				campaign_actives << ca
 			end
-			campaign_actives << ca
 		end
 
-
-		render :json => {:campaignIds => JSON.parse(campaign_actives.to_json)},
+		render :json => {:exhaustedCampaignList => JSON.parse(campaign_actives.to_json)},
                 :status => 200
 	end
 end
