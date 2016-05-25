@@ -16,7 +16,7 @@ class CampaignController < ApplicationController
 			active_campaign_ids << ecia
 		end
 
-		render :json => {:campaignIds => JSON.parse(active_campaign_ids.to_json)
+		render :json => {:expiredCampaigns => JSON.parse(active_campaign_ids.to_json)
 						},
                 :status => 200
 
