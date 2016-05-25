@@ -2,6 +2,23 @@ class CampaignController < ApplicationController
 
 	skip_before_filter :verify_authenticity_token
 
+	def get_active_campaigns
+		obj = JSON.parse(params[:json], object_class: OpenStruct)
+		campaignIds = obj.campaignIds
+
+		campaigns = Campaign.where(id: campaignIds).where(active: 1)
+
+		active_campaign_ids = Array.new
+		campaigns.each do |campaign|
+			active_campaign_ids << campaign.id
+		end
+
+		render :json => {:campaignIds => JSON.parse(active_campaign_ids.to_json)
+						},
+                :status => 200
+
+	end
+
 	def get_all_campaigns
 		all_campaigns = CampaignInfo.get_all_active_campaigns
 
