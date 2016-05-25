@@ -6,11 +6,14 @@ class CampaignController < ApplicationController
 		obj = JSON.parse(params[:json], object_class: OpenStruct)
 		campaignIds = obj.campaignIds
 
-		campaigns = Campaign.where(id: campaignIds).where(active: 1)
+		campaigns = Campaign.where(id: campaignIds)
 
 		active_campaign_ids = Array.new
 		campaigns.each do |campaign|
-			active_campaign_ids << campaign.id
+			ecia = EntityCampaignIdActive.new
+			ecia.campaignId = campaign.id
+			ecia.active = campaign.active ? 1 : 0
+			active_campaign_ids << ecia
 		end
 
 		render :json => {:campaignIds => JSON.parse(active_campaign_ids.to_json)
