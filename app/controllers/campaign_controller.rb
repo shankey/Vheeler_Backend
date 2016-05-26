@@ -1,4 +1,5 @@
 class CampaignController < ApplicationController
+	include CampaignHelper
 
 	skip_before_filter :verify_authenticity_token
 
@@ -66,6 +67,8 @@ class CampaignController < ApplicationController
 			entity_ads_array << ea
 		end
 
+		entity_ads_array << get_default_ad
+
 		render :json => {:campaigns => JSON.parse(entity_campaigns_array.to_json),
 						:ads => JSON.parse(entity_ads_array.to_json)
 						},
@@ -108,7 +111,9 @@ class CampaignController < ApplicationController
 			campaign_run.campaignInfoId = key
 			campaign_run.schedule = value
 			campaign_runs << campaign_run
-		end		
+		end	
+
+
 
 		render :json => {:campaignSchedules => JSON.parse(campaign_runs.to_json),
 						},
