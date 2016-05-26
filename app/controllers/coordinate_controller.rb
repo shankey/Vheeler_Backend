@@ -18,7 +18,9 @@ class CoordinateController < ApplicationController
             co.recordtime = obj.timestamp
             co.device_id = obj.deviceId
 
-            run = process_coordinate(co, obj.campaignInfoId)
+            if(co.ad_id != 7)
+                run = process_coordinate(co, obj.campaignInfoId)
+            end
 
             co.save
             render :json => {:run => run},
@@ -47,7 +49,9 @@ class CoordinateController < ApplicationController
                 co.device_id = obj.deviceId
                 
                 logger.info co.inspect
-                process_coordinate(co)
+                if(co.ad_id != 7)
+                    process_coordinate(co)
+                end
 
                 co.save
             end
