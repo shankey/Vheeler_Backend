@@ -38,6 +38,7 @@ class CoordinateController < ApplicationController
     def coordinate_batch
         logger.debug params
             obj = JSON.parse(params[:json], object_class: OpenStruct)
+            logger.info obj
             
             obj.li.each do |o|
                 co = Coordinate.new
@@ -50,7 +51,7 @@ class CoordinateController < ApplicationController
                 
                 logger.info co.inspect
                 if(co.ad_id != 7)
-                    process_coordinate(co)
+                    process_coordinate(co, o.campaign_info_id)
                 end
 
                 co.save
