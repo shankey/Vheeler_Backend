@@ -22,6 +22,10 @@ class UserController < ApplicationController
         @base_api = Figaro.env.base_api
     end
 
+    def dash
+        @base_api = Figaro.env.base_api
+    end
+
     def dashboard
         @base_api = Figaro.env.base_api
         @areas = AreaInfo.all

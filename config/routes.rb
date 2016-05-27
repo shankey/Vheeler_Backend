@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/' => 'user#index'
+  get '/dash' => 'user#dash'
   get '/dashboard' => 'user#dashboard'
 
   post '/coordinate' => 'coordinate#coordinate'

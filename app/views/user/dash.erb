@@ -1,0 +1,94 @@
+<script type="text/javascript">
+  if($.cookie('userId')!=null){
+    window.location.href = "/dashboard";
+  }
+
+</script>
+
+<div class="page">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example- navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button> -->
+        
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+        <ul class="nav navbar-nav">
+          <li class=""><a href="#">Contact Us</a></li>
+        </ul>
+      
+        <!-- <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Link</a></li>
+        
+        </ul> -->
+      <!-- </div> --><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="brand">
+    <img class="navbar-logo" src="/Vheeler-1.png">
+  </div>
+
+  <div class="login-box">
+    <p>USERNAME: <input type="text" id="username" class="float-right"> </p>
+    <p>PASSWORD: <input type="password" id="password" class="float-right"></p>
+    <p>&nbsp; <button type="button" id="submitlogin" class="float-right">Submit</button> <img src="/loading.gif" class="float-right loading-icon" ></p>
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+	var apiPath = "<%= @base_api %>";
+	$( document ).ready(function() {
+
+		$( "#submitlogin" ).click(function() {
+  			if($.isEmptyObject($("#username").val()) || $.isEmptyObject($("#password").val())){
+  				alert("enter username and password");
+  				return;
+  			}
+
+  			var username = $("#username").val();
+  			var password = $("#password").val();
+
+  			$.ajax({
+                method: "GET",
+                dataType: 'json',
+                async: false,
+                url: "/login?userName=" + username + "&password=" + password ,
+                beforeSend: function() {
+                  $(".loading-icon").show();
+                },
+                success: function (data) {
+                    console.log(data);
+                    $.cookie('userId',data.json.userId);
+                    window.location.href = "/dashboard";
+
+                },
+                error: function(jqXHR, textStatus){
+                    console.log("error");
+                    //
+                    //
+                    //
+                },
+                complete: function() {
+                  
+                  $(".loading-icon").hide();
+                }
+            });
+
+		});
+
+
+	});
+</script>
