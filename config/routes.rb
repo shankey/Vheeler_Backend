@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/' => 'user#index'
+  get '/' => 'user#dash'
   get '/dash' => 'user#dash'
   get '/dashboard' => 'user#dashboard'
 
