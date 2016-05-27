@@ -106,6 +106,10 @@ body.fullScreenMode-scrollable.device-mobile-optimized {
   body.fullScreenMode-scrollable.device-mobile-optimized #SITE_BACKGROUND {
     height: auto !important; }
 
+    .wixAds{
+      visibility: hidden;
+    }
+
 .SITE_ROOT {
   min-height: 100%;
   position: relative;
