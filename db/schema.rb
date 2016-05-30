@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518131134) do
+ActiveRecord::Schema.define(version: 20160530105356) do
 
   create_table "ads", force: :cascade do |t|
     t.integer  "area_id",    limit: 4
@@ -74,17 +74,18 @@ ActiveRecord::Schema.define(version: 20160518131134) do
   add_index "campaigns", ["user_id", "name"], name: "index_campaigns_on_user_id_and_name", unique: true, using: :btree
 
   create_table "coordinates", force: :cascade do |t|
-    t.string   "user_id",    limit: 255
-    t.decimal  "latitude",               precision: 15, scale: 10
-    t.decimal  "longitude",              precision: 15, scale: 10
-    t.integer  "ad_id",      limit: 4
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
-    t.integer  "area_id",    limit: 4
+    t.string   "user_id",          limit: 255
+    t.decimal  "latitude",                     precision: 15, scale: 10
+    t.decimal  "longitude",                    precision: 15, scale: 10
+    t.integer  "ad_id",            limit: 4
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
+    t.integer  "area_id",          limit: 4
     t.datetime "recordtime"
-    t.string   "polyline",   limit: 255
-    t.string   "device_id",  limit: 255
-    t.integer  "processed",  limit: 4
+    t.string   "polyline",         limit: 255
+    t.string   "device_id",        limit: 255
+    t.integer  "processed",        limit: 4
+    t.integer  "campaign_info_id", limit: 4
   end
 
   add_index "coordinates", ["device_id", "recordtime"], name: "index_coordinates_on_device_id_and_recordtime", using: :btree

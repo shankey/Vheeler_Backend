@@ -17,9 +17,10 @@ class CoordinateController < ApplicationController
             co.ad_id = obj.adId
             co.recordtime = obj.timestamp
             co.device_id = obj.deviceId
+            co.campaign_info_id = obj.campaignInfoId
 
             if(co.ad_id != 7)
-                run = process_coordinate(co, obj.campaignInfoId)
+                run = process_coordinate(co)
             end
 
             co.save
@@ -27,10 +28,10 @@ class CoordinateController < ApplicationController
                 :status => 200
     end
 
-    def process_coordinate(co, campaign_info_id)
+    def process_coordinate(co)
         co_prev = get_previous_coordinate(co)
         logger.info "previous coordinate " + co_prev.inspect
-        run = calculate_time_and_distance(co_prev,co,campaign_info_id)
+        run = calculate_time_and_distance(co_prev,co)
         return run
 
     end
@@ -48,10 +49,11 @@ class CoordinateController < ApplicationController
                 co.ad_id = o.adId
                 co.recordtime = o.timestamp
                 co.device_id = obj.deviceId
+                co.campaign_info_id = o.campaignInfoId
                 
                 logger.info co.inspect
                 if(co.ad_id != 7)
-                    process_coordinate(co, o.campaign_info_id)
+                    process_coordinate(co)
                 end
 
                 co.save

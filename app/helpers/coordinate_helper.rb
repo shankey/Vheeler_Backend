@@ -35,7 +35,7 @@ module CoordinateHelper
         return co_prev
     end
 
-    def calculate_time_and_distance (co_prev, co, campaign_info_id)
+    def calculate_time_and_distance (co_prev, co)
         logger.info "get_timeanddistance " 
         logger.info co.inspect
         run=true
@@ -55,7 +55,7 @@ module CoordinateHelper
                
         logger.info "before calling"
         logger.info co.inspect     
-        elsif(get_user_id_from_coordinate(co_prev) != get_user_id_from_coordinate(co)) # ad change 
+        elsif(get_user_id_from_coordinate(co_prev.campaign_info_id) != get_user_id_from_coordinate(co.campaign_info_id)) # ad change 
                     poly_id = get_polyline(co.recordtime, get_unique_string)
                     run=add_time_and_distance(co,co_prev, campaign_info_id)
         else
@@ -90,13 +90,12 @@ module CoordinateHelper
         end
     end
 
-    def get_user_id_from_coordinate (coo)
+    def get_user_id_from_coordinate (campaign_info_id)
         logger.info "get_userid " 
-        logger.info coo.inspect
-        sql = "LEFT JOIN campaign_infos ON campaign_infos.campaign_id=campaigns.id where campaign_infos.ad_id=%ad_id and campaign_infos.area_id=%area_id"
+        
+        sql = "LEFT JOIN campaign_infos ON campaign_infos.campaign_id=campaigns.id where campaign_infos.campaign_info_id=%campaign_info_id"
 
-        sql.sub! '%ad_id', coo.ad_id.to_s
-        sql.sub! '%area_id', coo.area_id.to_s
+        sql.sub! '%campaign_info_id', campaign_info_id
 
     	c = Campaign.joins(sql).take
     	return c.user_id
