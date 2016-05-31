@@ -97,12 +97,10 @@ module CoordinateHelper
             return nil
         end
 
-        logger.info "get_userid " 
+        logger.info "get_userid for campaign_info_id = " + campaign_info_id.to_s 
+
+        Campaign.joins(:campaign_info).includes(:campaign_info).where(:campaign_infos => {:id => campaign_info_id, :active => 1}).take;
         
-        sql = "LEFT JOIN campaign_infos ON campaign_infos.campaign_id=campaigns.id where campaign_infos.id=%campaign_info_id"
-
-        sql.sub! '%campaign_info_id', campaign_info_id.to_s
-
     	c = Campaign.joins(sql).take
     	return c.user_id
     end
