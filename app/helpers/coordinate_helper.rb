@@ -100,6 +100,10 @@ module CoordinateHelper
         logger.info "get_userid for campaign_info_id = " + campaign_info_id.to_s 
 
         c = Campaign.joins(:campaign_info).includes(:campaign_info).where(:campaign_infos => {:id => campaign_info_id, :active => 1}).take;
+
+        if(c == nil)
+            return nil
+        end
     	return c.user_id
     end
 
