@@ -30,6 +30,8 @@ class CoordinateController < ApplicationController
 
                 if(co.ad_id != 7)
                     run = process_coordinate(co)
+                else
+                    run=true
                 end
 
                 co.save
@@ -70,6 +72,8 @@ class CoordinateController < ApplicationController
                     logger.info co.inspect
                     if(co.ad_id != 7)
                         process_coordinate(co)
+                    else
+                        run=true
                     end
                     co.save
                 end

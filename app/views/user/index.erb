@@ -1,465 +1,365 @@
-<!DOCTYPE html>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="bootstrap theme, bootstrap template, html5 theme">
+    <meta name="description" content="Free Bootstrap template based on HTML5 and CSS3">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-             
-    
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" href="./css/animate.css"/>
+    <script src="./js/jquery-2.1.0.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/typer.js"></script>
+    <script src="./js/blocs.js"></script>
+    <link rel='stylesheet' href='./css/et-line.min.css'/>
+    <link rel='stylesheet' href='./css/font-awesome.min.css'/>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat&subset=latin,latin-ext' rel='stylesheet'
+          type='text/css'>
+
+    <title>Vheeler</title>
+</head>
+<body>
+<!-- Main container -->
+<div class="page-container">
+
+    <!-- Navigation Bloc -->
+    <div class="bloc bgc-carmine-pink d-bloc" id="nav-bloc">
+        <div class="container">
+            <nav class="navbar-fixed-top navbar-custom">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html"><span class="et-icon-gears icon-sm icon-white zoomIn animated"></span>&nbsp;Vheeler</a>
+                    <button id="nav-toggle" type="button" class="ui-navbar-toggle navbar-toggle" data-toggle="collapse"
+                            data-target=".navbar-1">
+                        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse navbar-1">
+                    <ul class="site-navigation nav navbar-nav">
+                        <li>
+                            <a  onclick="scrollToTarget('#header')">Home</a>
+                        </li>
+                        <li>
+                            <a  onclick="scrollToTarget('#aboutus')">About Us</a>
+                        </li>
+                        <li>
+                            <a onclick="scrollToTarget('#platform')">Platform</a>
+                        </li>
+                        <li>
+                            <a onclick="scrollToTarget('#team')">Team</a>
+                        </li>
+                        <li>
+                            <a onclick="scrollToTarget('#contact')">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navigation Bloc END -->
+
+    <!-- header -->
+    <div class="bloc bgc-outer-space bg-city-overlay d-bloc" id="header">
+        <div class="container bloc-lg">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="text-center mg-lg tc-white">DIGITAL HYPERLOCAL OOH</h3>
+                    <h3 class="text-center mg-lg tc-white">ADVERTISING</h3>
+                    <h3 class="text-center mg-lg tc-white">VIA TRANSIT MEDIA</h3>
+
+                    <p class="text-center  mg-lg animated fadeInUp animDelay02 tagline">
+                        Get Seen Where People Are, Where It Actually Matters
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header END -->
+
+    <!-- services -->
+    <div class="bloc l-bloc bgc-white" id="aboutus">
+        <div class="container bloc-md">
+            <div class="col-sm-12">
+                    <h2 class="text-center mg-md ">
+                        About Us
+                    </h2>
+                    <p class="para-text">
+                    Vheeler is a powerful combination of digital & offline marketing. We bring the ease, speed and accuracy of digital marketing in the physical world.
+                    <p/>
+
+                    <br>
+
+                    <p class="para-text">
+                        We display ads on GPS tracked intra-city cabs plying on roads through a digital screen attached to cars' rear windscreens. The ads displayed are controlled and managed remotely through an easy-to-operate tractable dashboard. Vheeler allows marketers to display dynamic location specific ads for their brands and analyze results easily through the dashboard, just like on any digital platform
+                    </p>
+                </div>
+            <!-- <div class="row">
+                <div class="col-sm-4">
+                    <div class="text-center">
+                        <span class="et-icon-picture icon-xl icon-carmine-pink animated zoomIn animDelay02"></span>
+                    </div>
+                    <h3 class="text-center mg-md ">
+                        Web Design
+                    </h3>
+
+                    <p class="text-center">
+                        A little feature description could go here. A little feature description.
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <div class="text-center">
+                        <span class="et-icon-gears icon-xl icon-carmine-pink animated zoomIn"></span>
+                    </div>
+                    <h3 class="text-center mg-md ">
+                        Web Development
+                    </h3>
+
+                    <p class="text-center">
+                        A little feature description could go here. A little feature description.
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <div class="text-center">
+                        <span class="et-icon-linegraph icon-xl icon-carmine-pink animated zoomIn animDelay02"></span>
+                    </div>
+                    <h3 class="text-center mg-md ">
+                        Promotion
+                    </h3>
+
+                    <p class="text-center">
+                        A little feature description could go here. A little feature description.
+                    </p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <!-- services END -->
+
+    <!-- platform -->
+    <div class="bloc l-bloc bgc-white" id="platform">
+        <div class="container bloc-md">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="text-center mg-md ">
+                        The Platform
+                    </h2>
+
+                </div>
+            </div>
+            <div class="row voffset">
+                <div class="col-sm-4">
+                    <div class="box"> HyperLocal</div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="box"> Dynamic</div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="box"> Flexible</div>
+                </div>
+            </div>
+            <div class="row voffset">
+                <div class="col-sm-4">
+                    <div class="box"> Complete Control</div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="box"> Analyze Results</div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="box"> Pay Per Minute Model</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- platform END -->
+
+    <!-- team -->
+    <div class="bloc bgc-carmine-pink d-bloc" id="team">
+        <div class="container bloc-sm">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="text-center mg-md ">
+                        The Team
+                    </h2>
+
+                    
+                </div>
+            </div>
+            <div class="row voffset-lg">
                 
-<title>vheeler</title>
-<meta name="fb_admins_meta_tag" content="">
+                <div class="col-sm-6">
+                    <img src="img/adi.png" width="200px" class="img-responsive" alt="member"/>
+
+                    <h3 class="text-center mg-md">
+                        Aditya Nema
+                    </h3>
+
+                    <p class="text-center">
+                        MBA, ISB Hyderabad <br>
+                        B.Tech, NIT Kurukshetra <br>
+                        Ex Sr. Software Developer, Amazon <br>
+                        Ex Product Manager, Crowdfire <br>
+                    </p>
+                    
+                </div>
+                <div class="col-sm-6">
+                    <img src="img/shashwat.jpeg" width="200px" class="img-responsive" alt="member"/>
+
+                    <h3 class="text-center mg-md">
+                        Shashwat Diesh
+                    </h3>
+
+                    <p class="text-center">
+                        B.Tech, RVCE Bangalore <br>
+                        Ex Operations Manager, Ola <br>
+                        Ex Operations Manager, Snapdeal <br>
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- team END -->
+
+    <!-- contact -->
 
 
-    <meta http-equiv="X-Wix-Renderer-Server" content="app11.tam">
-<meta http-equiv="X-Wix-Meta-Site-Id" content="e7defd33-ce33-46da-a321-39420f8424fc">
-<meta http-equiv="X-Wix-Application-Instance-Id" content="4f7eb745-62be-4476-908c-7b3b90af6836">
-<meta http-equiv="X-Wix-Published-Version" content="16">
+    <div class="bloc bg-contact-overlay l-bloc" id="contact">
+        <div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="text-center mg-md" style="margin-top: 30px;">
+                        Contact Us
+                    </h2>
 
-<meta http-equiv="etag" content="bf2079c898a3238454c8786dafa41e9b">
-<meta property="og:title" content="vheeler">
-<meta property="og:type" content="article">
-<meta property="og:url" content="http://vheeler.com">
-<meta property="og:site_name" content="vheeler">
-<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+                    <p class="text-center para-text">
+                        We would love to get in touch with you.
+                    </p>
+                </div>
+                <div style="height: 300px;"></div>
+                <div class="col-sm-6 contact-slab" style="text-align: right;">
+                    <p style="margin-right: 20px;"><img src="img/email-white.png" width="50px"></p><br>
+                    <p>aditya@vheeler.com</p>
+                    <p>shashwat@vheeler.com</p>
+                </div>
+                <div class="col-sm-6 contact-slab" style="text-align: left;">
+                    <p style="margin-left: 20px;"> <img src="img/phone-white.png" width="50px"></p><br>
+                    <p>+91-7032409634</p>
+                    <p>+91-7042690054</p>
+                </div>
 
-<meta id="wixMobileViewport" name="viewport" content="width=980, user-scalable=yes">
 
+            </div>
+
+
+        </div>
 
         
+    </div>
 
-    <script>
-    // BEAT MESSAGE
-    try {
-        window.wixBiSession = {
-            initialTimestamp : Date.now(),
-            viewerSessionId: 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c)
-                    { var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8); return v.toString(16); }
-            )
-        };
-        (new Image()).src = 'http://frog.wix.com/bt?src=29&evid=3&pn=1&et=1&v=1.1392.21&msid=e7defd33-ce33-46da-a321-39420f8424fc&vsi=' + wixBiSession.viewerSessionId +
-                '&url=' + encodeURIComponent(location.href.replace(/^http(s)?:\/\/(www\.)?/, '')) +
-                '&isp=0&st=2&ts=0&c=' + wixBiSession.initialTimestamp;
-    } catch (e){}
-    // BEAT MESSAGE END
-</script>
+
+
+
+
+
+    <!-- <div class="custom-bloc bloc l-bloc" id="contact">
+        <div class="contact-bg"></div>
+        <div class="container bloc-sm">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="text-center mg-md ">
+                        Contact Us
+                    </h2>
+
+                    <p class="text-center para-text">
+                        We would love to get in touch with you.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="outer" style="width: 100%; display: inline-block; height: 100px">
+                
+                        <div class="col-sm-2 inner" style="background: red" >
+                            <img src="img/email.png" width="100px" class="img-responsive" alt="member"/>
+                        </div>
+                    
+                        <div class="col-sm-4 inner" style="background: red; height: 100px">
+                            <div class="text-center mg-md contact-text">
+                                aditya@vheeler.com <br>
+                                shashwat@vheeler.com
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-2 inner">
+                            <img src="img/phone.jpg" width="100px" class="img-responsive" alt="member"/>
+                        </div>
+                    
+                        <div class="col-sm-4 inner">
+                            <div class="text-center mg-md contact-text">
+                                +91-7032409634<br>
+                                +91-xxxxxxxxxx
+                            </div>
+                        </div>
+                
+            </div>
+    </div> -->
+    <!-- contact END -->
 
     
 
-    <!-- META DATA -->
-<script type="text/javascript">
-
-    var serviceTopology = {"serverName":"app11.tam","cacheKillerVersion":"1","staticServerUrl":"http://static.parastorage.com/","usersScriptsRoot":"http://static.parastorage.com/services/wix-users/2.614.0","biServerUrl":"http://frog.wix.com/","userServerUrl":"http://users.wix.com/","billingServerUrl":"http://premium.wix.com/","mediaRootUrl":"http://static.wixstatic.com/","logServerUrl":"http://frog.wix.com/plebs","monitoringServerUrl":"http://TODO/","usersClientApiUrl":"https://users.wix.com/wix-users","publicStaticBaseUri":"http://static.parastorage.com/services/wix-public/1.191.0","basePublicUrl":"http://www.wix.com/","postLoginUrl":"http://www.wix.com/my-account","postSignUpUrl":"http://www.wix.com/new/account","baseDomain":"wix.com","staticMediaUrl":"https://static.wixstatic.com/media","staticAudioUrl":"https://media.wix.com/mp3","emailServer":"http://assets.wix.com/common-services/notification/invoke","blobUrl":"https://static.parastorage.com/wix_blob","htmlEditorUrl":"http://editor.wix.com/html","siteMembersUrl":"https://users.wix.com/wix-sm","scriptsLocationMap":{"wixapps":"https://static.parastorage.com/services/wixapps/2.484.0","tpa":"https://static.parastorage.com/services/tpa/2.1062.0","santa-resources":"https://static.parastorage.com/services/santa-resources/1.2.0","wix-code-sdk":"https://static.parastorage.com/services/js-wixcode-sdk/1.15.0","bootstrap":"https://static.parastorage.com/services/bootstrap/2.1229.49","ck-editor":"https://static.parastorage.com/services/ck-editor/1.87.3","it":"https://static.parastorage.com/services/experiments/it/1.37.0","santa":"https://static.parastorage.com/services/santa/1.1392.21","skins":"https://static.parastorage.com/services/skins/2.1229.49","core":"https://static.parastorage.com/services/core/2.1229.49","sitemembers":"https://static.parastorage.com/services/sm-js-sdk/1.31.0","automation":"https://static.parastorage.com/services/automation/1.23.0","web":"https://static.parastorage.com/services/web/2.1229.49","ecommerce":"https://static.parastorage.com/services/ecommerce/1.203.0","hotfixes":"https://static.parastorage.com/services/experiments/hotfixes/1.15.0","langs":"https://static.parastorage.com/services/langs/2.568.0","santa-versions":"https://static.parastorage.com/services/santa-versions/1.419.0","ut":"https://static.parastorage.com/services/experiments/ut/1.2.0"},"developerMode":false,"productionMode":true,"staticServerFallbackUrl":"https://sslstatic.wix.com/","staticVideoUrl":"http://video.wixstatic.com/","scriptsDomainUrl":"https://static.parastorage.com/","userFilesUrl":"http://static.parastorage.com/","staticHTMLComponentUrl":"http://vheeler.com.usrfiles.com/","secured":false,"ecommerceCheckoutUrl":"https://www.safer-checkout.com/","premiumServerUrl":"https://premium.wix.com/","appRepoUrl":"http://assets.wix.com/wix-lists-ds-webapp","digitalGoodsServerUrl":"http://dgs.wixapps.net/","wixCloudBaseDomain":"wix-code.com","mailServiceSuffix":"/_api/common-services/notification/invoke","staticVideoHeadRequestUrl":"http://storage.googleapis.com/video.wixstatic.com","protectedPageResolverUrl":"https://site-pages.wix.com/_api/wix-public-html-info-webapp/resolve_protected_page_urls","publicStaticsUrl":"http://static.parastorage.com/services/wix-public/1.191.0","staticDocsUrl":"http://media.wix.com/ugd"};
-    var santaModels = true;
-    var rendererModel = {"metaSiteId":"e7defd33-ce33-46da-a321-39420f8424fc","siteInfo":{"documentType":"UGC","applicationType":"HtmlWeb","siteId":"4f7eb745-62be-4476-908c-7b3b90af6836","siteTitleSEO":"vheeler"},"clientSpecMap":{"13":{"type":"sitemembers","applicationId":13,"collectionType":"Open","smtoken":"418a8e1973bfe97ca64642edf1fe7461ae6346d2139b2efebe2771d27f4faedcb95b65fa69d324e325a7b57d0a016b39c46c62b086479def5c69a2ffed1bf213de784fe4ca79b0941991f20716f2a7671623aefbd9e83c0497ec68698219891a","smcollectionId":"646591f2-30ae-4921-9663-b5d8120f3813"},"2":{"type":"appbuilder","applicationId":2,"appDefinitionId":"3d590cbc-4907-4cc4-b0b1-ddf2c5edf297","instanceId":"145219be-cca5-44ed-785e-e790ef8b3577","state":"Initialized"},"3":{"type":"public","applicationId":3,"appDefinitionId":"139ef4fa-c108-8f9a-c7be-d5f492a2c939","appDefinitionName":"Wix Smart Actions","instance":"E7o7EJVSU2xNqDEDqziiRTbxmGXvFKNiKlZkdJBDHco.eyJpbnN0YW5jZUlkIjoiNGM3NGE0ZGMtZjE4Ny00NzEyLTlhNDgtNmI2MTVkYzdjYmVmIiwic2lnbkRhdGUiOiIyMDE2LTA1LTI3VDA0OjU2OjIyLjExN1oiLCJ1aWQiOiJiNDc3ZTE0Yy1lODNjLTQyMDEtOTZkYS04OTk4MjUxZmQxN2MiLCJwZXJtaXNzaW9ucyI6Ik9XTkVSIiwiaXBBbmRQb3J0IjoiMTgyLjY4LjIxMC42MS8zMzM1NiIsInZlbmRvclByb2R1Y3RJZCI6bnVsbCwiZGVtb01vZGUiOnRydWUsImJpVG9rZW4iOiJhYmFhNTllZi0zZmI0LTAxYzgtMzk2OS01MjIzNTI0M2VmMTMiLCJzaXRlT3duZXJJZCI6ImI0NzdlMTRjLWU4M2MtNDIwMS05NmRhLTg5OTgyNTFmZDE3YyJ9","sectionPublished":true,"sectionMobilePublished":false,"sectionSeoEnabled":true,"widgets":{},"appRequirements":{"requireSiteMembers":false},"isWixTPA":true,"installedAtDashboard":true,"permissions":{"revoked":false}}},"premiumFeatures":[],"geo":"IND","languageCode":"en","previewMode":false,"userId":"b477e14c-e83c-4201-96da-8998251fd17c","siteMetaData":{"preloader":{"enabled":false},"adaptiveMobileOn":true,"quickActions":{"socialLinks":[],"colorScheme":"dark","configuration":{"quickActionsMenuEnabled":false,"navigationMenuEnabled":true,"phoneEnabled":false,"emailEnabled":false,"addressEnabled":false,"socialLinksEnabled":false}},"contactInfo":{"companyName":"","phone":"","fax":"","email":"","address":""}},"runningExperiments":{"wixappsPerformanceMeasuring":"new","adaptiveViewportScale":"new","sv_allowEditingGaps":"new","anchorsMenuAutoColor":"new","actionsBehaviors":"new","sv_minPH":"new","sv_exp171":"new","compStateMixin":"new","blogQueryProjection":"new","fast_save":"new","sv_blogCleanExcerptStyles":"new","sv_blogPagination":"new","deepLinking":"new","sv_passwordPages":"new","fixGsapRaf":"new","highlightAnchorsInMenu":"new","improvedImageZoom":"new","videoVisibilityApiSupport":"new","sv_blogCategories":"new","sendContactFormEmailsViaPong":"old","sv_removeLoginByGuid":"new","sv_appFlows":"new","mobileAppBannerOnMobile":"new","sv_blogVideoThumbnail":"new","sv_dontShowGalleryLink":"new","sv_textCompFilter":"new"},"urlFormatModel":{"format":"hashBang","forbiddenPageUriSEOs":["app","apps","_api","robots.txt","sitemap.xml","feed.xml","sites"],"pageIdToResolvedUriSEO":{}},"passwordProtectedPages":[],"useSandboxInHTMLComp":true};
-    var publicModel = {"domain":"wix.com","externalBaseUrl":"http:\/\/vheeler.com\/vheeler","unicodeExternalBaseUrl":"http:\/\/vheeler.com\/vheeler","pageList":{"masterPage":["https:\/\/static.wixstatic.com\/sites\/b477e1_81c3f6e50800fef5287137e7d0dcb5b3_13.json.z?v=3","https:\/\/staticorigin.wixstatic.com\/sites\/b477e1_81c3f6e50800fef5287137e7d0dcb5b3_13.json.z?v=3","https:\/\/fallback.wix.com\/wix-html-editor-pages-webapp\/page\/b477e1_81c3f6e50800fef5287137e7d0dcb5b3_13.json"],"pages":[{"pageId":"jt80h","title":"HOME","pageUriSEO":"home","urls":["https:\/\/static.wixstatic.com\/sites\/b477e1_c39b3d75dca9ddaab6b48fa050a5339f_15.json.z?v=3","https:\/\/staticorigin.wixstatic.com\/sites\/b477e1_c39b3d75dca9ddaab6b48fa050a5339f_15.json.z?v=3","https:\/\/fallback.wix.com\/wix-html-editor-pages-webapp\/page\/b477e1_c39b3d75dca9ddaab6b48fa050a5339f_15.json"]}],"mainPageId":"jt80h"},"timeSincePublish":3395,"":"","deviceInfo":{"deviceType":"Desktop","browserType":"Chrome","browserVersion":50},"siteRevision":16};
-
-
-    var googleAnalytics = "UA-2117194-61"
-    ;
-
-    var googleRemarketing = "";
-    var facebookRemarketing = "";
-    var yandexMetrika = "";
-
-</script>
-
-
-
-            <meta name="fragment" content="!">
     
-    <!-- DATA -->
-<script type="text/javascript">
-    var adData = {"topLabel":"<span class=\"smallMusa\">(Wix-Logo) </span>Create a <span class=\"smallLogo\">Wix</span> site!","topContent":"100s of templates<br />No coding needed<br /><span class=\"emphasis spacer\">Start now >></span>","footerLabel":"<div class=\"adFootBox\"><div class=\"siteBanner\" ><div class=\"siteBanner\"><div class=\"wrapper\"><div class=\"bigMusa\">(Wix Logo)</div><div class=\"txt shd\" style=\"color:#fff\">This site was created using </div> <div class=\"txt shd\"><a  href=\"http://www.wix.com?utm_campaign=vir_wixad_live&experiment_id=abtestbanner122400001\" style=\"color:#fff\"> WIX.com. </a></div> <div class=\"txt shd\" style=\"color:#fff\"> Create your own for FREE <span class=\"emphasis\"> >></span></div></div></div></div></div>","adUrl":"http://www.wix.com/lpviral/enviral?utm_campaign=vir_wixad_live&experiment_id=abtestbanner122400001"};
-    var mobileAdData = {"footerLabel":"7c3dbd_67131d7bd570478689be752141d4e28a.jpg","adUrl":"http://www.wix.com?utm_campaign=vir_wixad_live&experiment_id=abtestbanner122400001"};
-    var usersDomain = "https://users.wix.com/wix-users";
-        </script>
-            <script type="text/javascript">
-    var santaBase = 'https://static.parastorage.com/services/santa/1.1392.21';
-        var clientSideRender = true;
-    </script>
-<script src="./vheeler_files/require.min.js"></script>
-<script src="./vheeler_files/main-r.min.js"></script>
-<link rel="stylesheet" href="./vheeler_files/viewer.css">
 
-<link rel="preload" href="./vheeler_files/latin.css" as="style"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="wixCodeInit" src="./vheeler_files/wixCodeInit.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="skins" src="./vheeler_files/skins.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components" src="./vheeler_files/components.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="utils" src="./vheeler_files/utils.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="core" src="./vheeler_files/core.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="react" src="./vheeler_files/react-with-addons.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lodash" src="./vheeler_files/lodash.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="TimelineMax" src="./vheeler_files/TweenMax.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layout" src="./vheeler_files/layout.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="tpa" src="./vheeler_files/tpa.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="fonts" src="./vheeler_files/fonts.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="animations" src="./vheeler_files/animations.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="imageClientApi" src="./vheeler_files/imageClientApi.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="swfobject" src="./vheeler_files/swfobject.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mousetrap" src="./vheeler_files/mousetrap.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="tweenEngine" src="./vheeler_files/tweenEngine.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="DrawSVGPlugin" src="./vheeler_files/DrawSVGPlugin.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="reactDOM" src="./vheeler_files/react-dom.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ScrollToPlugin" src="./vheeler_files/ScrollToPlugin.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="widgets" src="./vheeler_files/widgets.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="experiment" src="./vheeler_files/experiment.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="render" src="./vheeler_files/render.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zepto" src="./vheeler_files/zepto.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="color" src="./vheeler_files/color.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="reactDOMServer" src="./vheeler_files/react-dom-server.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="wixappsCore" src="./vheeler_files/wixappsCore.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="wixappsBuilder" src="./vheeler_files/wixappsBuilder.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="xss" src="./vheeler_files/xss.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://stats.g.doubleclick.net/dc.js" src="./vheeler_files/dc.js"></script></head>
-<body class="">
-        <div id="SITE_CONTAINER"><div class="noop" data-reactid=".0"><div data-reactid=".0.0"><style type="text/css" data-reactid=".0.0.$font0">.font_0 {font:normal normal bold 15px/1.4em raleway,sans-serif ;color:#FFFFFF;}</style><style type="text/css" data-reactid=".0.0.$font1">.font_1 {font:normal normal normal 16px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif ;color:#3C3C4E;}</style><style type="text/css" data-reactid=".0.0.$font2">.font_2 {font:normal normal bold 80px/1.4em raleway,sans-serif ;color:#1B1B1E;}</style><style type="text/css" data-reactid=".0.0.$font3">.font_3 {font:normal normal bold 90px/1.4em raleway,sans-serif ;color:#1B1B1E;}</style><style type="text/css" data-reactid=".0.0.$font4">.font_4 {font:normal normal bold 80px/1.4em raleway,sans-serif ;color:#1B1B1E;}</style><style type="text/css" data-reactid=".0.0.$font5">.font_5 {font:normal normal bold 30px/1.4em raleway,sans-serif ;color:#1B1B1E;}</style><style type="text/css" data-reactid=".0.0.$font6">.font_6 {font:normal normal bold 16px/1.4em raleway,sans-serif ;color:#1B1B1E;}</style><style type="text/css" data-reactid=".0.0.$font7">.font_7 {font:normal normal normal 16px/1.4em raleway,sans-serif ;color:#1B1B1E;}</style><style type="text/css" data-reactid=".0.0.$font8">.font_8 {font:normal normal normal 14px/1.4em raleway,sans-serif ;color:#1B1B1E;}</style><style type="text/css" data-reactid=".0.0.$font9">.font_9 {font:normal normal normal 12px/1.4em raleway,sans-serif ;color:#3C3C4E;}</style><style type="text/css" data-reactid=".0.0.$font10">.font_10 {font:normal normal normal 12px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif ;color:#3C3C4E;}</style><style type="text/css" data-reactid=".0.0.$color">.color_0 {color:#FFFFFF;}
-.backcolor_0 {background-color:#FFFFFF;}
-.color_1 {color:#FFFFFF;}
-.backcolor_1 {background-color:#FFFFFF;}
-.color_2 {color:#000000;}
-.backcolor_2 {background-color:#000000;}
-.color_3 {color:#ED1C24;}
-.backcolor_3 {background-color:#ED1C24;}
-.color_4 {color:#0088CB;}
-.backcolor_4 {background-color:#0088CB;}
-.color_5 {color:#FFCB05;}
-.backcolor_5 {background-color:#FFCB05;}
-.color_6 {color:#727272;}
-.backcolor_6 {background-color:#727272;}
-.color_7 {color:#B0B0B0;}
-.backcolor_7 {background-color:#B0B0B0;}
-.color_8 {color:#FFFFFF;}
-.backcolor_8 {background-color:#FFFFFF;}
-.color_9 {color:#727272;}
-.backcolor_9 {background-color:#727272;}
-.color_10 {color:#B0B0B0;}
-.backcolor_10 {background-color:#B0B0B0;}
-.color_11 {color:#FFFFFF;}
-.backcolor_11 {background-color:#FFFFFF;}
-.color_12 {color:#DADADA;}
-.backcolor_12 {background-color:#DADADA;}
-.color_13 {color:#7C7C83;}
-.backcolor_13 {background-color:#7C7C83;}
-.color_14 {color:#3C3C4E;}
-.backcolor_14 {background-color:#3C3C4E;}
-.color_15 {color:#1B1B1E;}
-.backcolor_15 {background-color:#1B1B1E;}
-.color_16 {color:#BCC1EB;}
-.backcolor_16 {background-color:#BCC1EB;}
-.color_17 {color:#979DD7;}
-.backcolor_17 {background-color:#979DD7;}
-.color_18 {color:#4E5AC3;}
-.backcolor_18 {background-color:#4E5AC3;}
-.color_19 {color:#343C82;}
-.backcolor_19 {background-color:#343C82;}
-.color_20 {color:#1A1E41;}
-.backcolor_20 {background-color:#1A1E41;}
-.color_21 {color:#FDF9B9;}
-.backcolor_21 {background-color:#FDF9B9;}
-.color_22 {color:#FAF375;}
-.backcolor_22 {background-color:#FAF375;}
-.color_23 {color:#BCB658;}
-.backcolor_23 {background-color:#BCB658;}
-.color_24 {color:#7D7A3B;}
-.backcolor_24 {background-color:#7D7A3B;}
-.color_25 {color:#3F3D1D;}
-.backcolor_25 {background-color:#3F3D1D;}
-.color_26 {color:#AFF4EE;}
-.backcolor_26 {background-color:#AFF4EE;}
-.color_27 {color:#86E9E1;}
-.backcolor_27 {background-color:#86E9E1;}
-.color_28 {color:#21DECE;}
-.backcolor_28 {background-color:#21DECE;}
-.color_29 {color:#169489;}
-.backcolor_29 {background-color:#169489;}
-.color_30 {color:#0B4A45;}
-.backcolor_30 {background-color:#0B4A45;}
-.color_31 {color:#BBDCF8;}
-.backcolor_31 {background-color:#BBDCF8;}
-.color_32 {color:#98C8F0;}
-.backcolor_32 {background-color:#98C8F0;}
-.color_33 {color:#3D9BE9;}
-.backcolor_33 {background-color:#3D9BE9;}
-.color_34 {color:#29679B;}
-.backcolor_34 {background-color:#29679B;}
-.color_35 {color:#14344E;}
-.backcolor_35 {background-color:#14344E;}</style><style type="text/css" data-reactid=".0.0.$s0">.s0screenWidthBackground {position:absolute;top:0;right:0;bottom:0;left:0;}
-.s0[data-state~="mobileView"] {position:absolute !important;}
-.s0[data-state~="fixedPosition"] {position:fixed !important;left:auto !important;z-index:50;}
-.s0[data-state~="fixedPosition"].s0_footer {top:auto;bottom:0;}
-.s0_bg {position:absolute;top:0;right:0;bottom:0;left:0;background-color:rgba(27, 27, 30, 0.09);  border-top:0px solid rgba(47, 46, 46, 1);border-bottom:0px solid rgba(47, 46, 46, 1);}
-.s0[data-state~="mobileView"] .s0bg {left:10px;right:10px;}
-.s0bg {position:absolute;top:0px;right:0;bottom:0px;left:0;background-color:transparent;border-radius:0;}
-.s0inlineContent {position:absolute;top:0;right:0;bottom:0;left:0;}
-.s0centeredContent {position:absolute;top:0;right:0;bottom:0;left:0;}</style><style type="text/css" data-reactid=".0.0.$s1">.s1 {word-wrap:break-word;}
-.s1 li {font-style:inherit;font-weight:inherit;line-height:inherit;letter-spacing:normal;}
-.s1 ol,.s1 ul {padding-left:1.3em;padding-right:0;margin-left:0.5em;margin-right:0;line-height:normal;letter-spacing:normal;}
-.s1 ol[class~="wix-list"] li,.s1 ul[class~="wix-list"] li {margin-left:1em;margin-right:0;}
-.s1 ol[class~="wix-list"][dir="rtl"] li,.s1 ul[class~="wix-list"][dir="rtl"] li {margin-left:0;margin-right:1em;}
-.s1 ul {list-style-type:disc;}
-.s1 ol {list-style-type:decimal;}
-.s1 ul ul,.s1 ol ul {list-style-type:circle;}
-.s1 ul ul ul,.s1 ol ul ul {list-style-type:square;}
-.s1 ul ol ul,.s1 ol ol ul {list-style-type:square;}
-.s1 ul[dir="rtl"],.s1 ol[dir="rtl"] {padding-left:0;padding-right:1.3em;margin-left:0;margin-right:0.5em;}
-.s1 ul[dir="rtl"] ul,.s1 ul[dir="rtl"] ol,.s1 ol[dir="rtl"] ul,.s1 ol[dir="rtl"] ol {padding-left:0;padding-right:1.3em;margin-left:0;margin-right:0.5em;}
-.s1 p {margin:0;line-height:normal;letter-spacing:normal;}
-.s1 h1 {margin:0;line-height:normal;letter-spacing:normal;}
-.s1 h2 {margin:0;line-height:normal;letter-spacing:normal;}
-.s1 h3 {margin:0;line-height:normal;letter-spacing:normal;}
-.s1 h4 {margin:0;line-height:normal;letter-spacing:normal;}
-.s1 h5 {margin:0;line-height:normal;letter-spacing:normal;}
-.s1 h6 {margin:0;line-height:normal;letter-spacing:normal;}
-.s1 a {color:inherit;}</style><style type="text/css" data-reactid=".0.0.$s2">.s2itemsContainer {width:calc(100% - 0px);white-space:nowrap;position:relative;overflow:hidden;}
-.s2moreContainer {overflow:visible;display:inherit;white-space:nowrap;width:auto;background-color:transparent;border-radius:0;  }
-.s2dropWrapper {z-index:99999;display:block;opacity:1;visibility:hidden;position:absolute;margin-top:7px;}
-.s2dropWrapper[data-dropMode="dropUp"] {margin-top:0;margin-bottom:7px;}
-.s2repeaterButton {height:100%;position:relative;box-sizing:border-box;display:inline-block;cursor:pointer;font:normal normal normal 14px/1.4em raleway,sans-serif;}
-.s2repeaterButton[data-state~="header"] a,.s2repeaterButton[data-state~="header"] div {cursor:default !important;}
-.s2repeaterButton_gapper {padding:0 1px;}
-.s2repeaterButtonlabel {display:inline-block;padding:0 10px;color:#FFFFFF;transition: color 0.4s ease 0s;}
-.s2repeaterButton[data-state~="drop"] {width:100%;display:block;}
-.s2repeaterButton[data-state~="drop"] .s2repeaterButtonlabel {padding:0 .5em;}
-.s2repeaterButton[data-state~="over"] .s2repeaterButtonlabel {color:#BCC1EB;transition: color 0.4s ease 0s;}
-.s2repeaterButton[data-state~="selected"] .s2repeaterButtonlabel {color:#BCC1EB;transition: color 0.4s ease 0s;}</style><style type="text/css" data-reactid=".0.0.$s4">.s4screenWidthBackground {position:absolute;top:0;right:0;bottom:0;left:0;}
-.s4[data-state~="mobileView"] {position:absolute !important;}
-.s4[data-state~="fixedPosition"] {position:fixed !important;left:auto !important;z-index:50;}
-.s4[data-state~="fixedPosition"].s4_footer {top:auto;bottom:0;}
-.s4_bg {position:absolute;top:0;right:0;bottom:0;left:0;background-color:rgba(47, 46, 46, 1);box-shadow:0 0 5px rgba(0, 0, 0, 0.7);  border-top:0px solid rgba(27, 27, 30, 1);border-bottom:0px solid rgba(27, 27, 30, 1);}
-.s4[data-state~="mobileView"] .s4bg {left:10px;right:10px;}
-.s4bg {position:absolute;top:0px;right:0;bottom:0px;left:0;background-color:rgba(47, 46, 46, 1);border-radius:0;}
-.s4inlineContent {position:absolute;top:0;right:0;bottom:0;left:0;}
-.s4centeredContent {position:absolute;top:0;right:0;bottom:0;left:0;}</style><style type="text/css" data-reactid=".0.0.$s5">.s5screenWidthBackground {position:absolute;top:0;right:0;bottom:0;left:0;}
-.s5[data-state~="mobileView"] {position:absolute !important;}
-.s5[data-state~="fixedPosition"] {position:fixed !important;left:auto !important;z-index:50;}
-.s5[data-state~="fixedPosition"].s5_footer {top:auto;bottom:0;}
-.s5bg {position:absolute;top:0;right:0;bottom:0;left:0;}
-.s5inlineContent {position:absolute;top:0;right:0;bottom:0;left:0;}
-.s5centeredContent {position:absolute;top:0;right:0;bottom:0;left:0;}</style><style type="text/css" data-reactid=".0.0.$s6">.s6 {height:100px;width:100px;}
-.s6overlay {position:absolute;top:0;right:0;bottom:0;left:0;background-color:rgba(0, 0, 0, 0.664);}
-.s6inlineContent {position:absolute;top:0;right:0;bottom:0;left:0;}</style><style type="text/css" data-reactid=".0.0.$s7">.s7bg {position:absolute;top:0;right:0;bottom:0;left:0;}
-.s7[data-state~="mobileView"] .s7bg {left:10px;right:10px;}
-.s7inlineContent {position:absolute;top:0;right:0;bottom:0;left:0;}</style><style type="text/css" data-reactid=".0.0.$s8">.s8inlineContent {position:absolute;top:0;right:0;bottom:0;left:0;}</style><style type="text/css" data-reactid=".0.0.$s9">.s9 {border-bottom:12px solid rgba(78, 90, 195, 1);height:0 !important;min-height:0 !important;}</style><style type="text/css" data-reactid=".0.0.$s10">.s10bg {border:0px solid rgba(60, 60, 78, 1);background-color:rgba(60, 60, 78, 1);border-radius:0;  }
-.s10inlineContent,.s10bg {position:absolute;top:0;right:0;bottom:0;left:0;}</style><style type="text/css" data-reactid=".0.0.$s11">.s11menuContainer {display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;width:100%;height:100%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
-.s11menuContainer .s11_item {position:relative;}
-.s11menuContainer .s11_item .s11_link {display:-webkit-box;display:-webkit-flex;display:flex;text-decoration:none;width:100%;cursor:default;-webkit-box-align:center;-webkit-align-items:center;align-items:center;pointer-events:none;}
-.s11menuContainer .s11_item .s11_link .s11_text-wrapper {position:relative;white-space:nowrap;text-align:right;line-height:100%;visibility:hidden;opacity:0;left:10px;font:normal normal normal 14px/1.4em raleway,sans-serif ;    color:rgba(160, 160, 159, 1);width:calc(100% - 15px);-webkit-transition:all 0.3s cubic-bezier(0.23, 1, 0.32, 1);transition:all 0.3s cubic-bezier(0.23, 1, 0.32, 1);}
-.s11menuContainer .s11_item .s11_link .s11_text-wrapper .s11_label {cursor:pointer;}
-.s11menuContainer .s11_item .s11_link .s11_symbol {cursor:pointer;-webkit-box-flex:0;-webkit-flex:0 0 auto;flex:0 0 auto;-webkit-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;pointer-events:all;fill:transparent;stroke:rgba(160, 160, 159, 1);stroke-width:4px;}
-.s11menuContainer.s11_orientation-left .s11_item .s11_link {-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;flex-direction:row;}
-.s11menuContainer.s11_orientation-right .s11_item .s11_link {-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-webkit-flex-direction:row-reverse;flex-direction:row-reverse;}
-.s11menuContainer.s11_text-align-left .s11_item .s11_link .s11_text-wrapper {text-align:left;}
-.s11menuContainer.s11_text-align-center .s11_item .s11_link .s11_text-wrapper {text-align:center;}
-.s11menuContainer.s11_text-align-right .s11_item .s11_link .s11_text-wrapper {text-align:right;}
-.s11menuContainer .s11_item.s11_active .s11_link,.s11menuContainer .s11_item.s11_hover .s11_link {pointer-events:all;}
-.s11menuContainer .s11_item.s11_active .s11_link .s11_symbol,.s11menuContainer .s11_item.s11_hover .s11_link .s11_symbol {fill:#A0A09F;stroke:#A0A09F;}
-.s11menuContainer .s11_item.s11_active .s11_link .s11_text-wrapper,.s11menuContainer .s11_item.s11_hover .s11_link .s11_text-wrapper {visibility:visible;opacity:1;left:0;color:#A0A09F;}
-.s11menuContainer.s11_text-align-left .s11_item .s11_link .s11_text-wrapper .s11_label,.s11menuContainer.s11_orientation-left.s11_text-align-center .s11_item .s11_link .s11_text-wrapper .s11_label {padding-left:15px;}
-.s11menuContainer.s11_text-align-right .s11_item .s11_link .s11_text-wrapper .s11_label,.s11menuContainer.s11_orientation-right.s11_text-align-center .s11_item .s11_link .s11_text-wrapper .s11_label {padding-right:15px;}
-.s11menuContainer .s11_item.s11_light .s11_link .s11_text-wrapper,.s11menuContainer .s11_active.s11_item.s11_light .s11_link .s11_text-wrapper {color:#fff;}
-.s11menuContainer .s11_item.s11_light .s11_link .s11_symbol,.s11menuContainer .s11_active.s11_item.s11_light .s11_link .s11_symbol {stroke:#fff;}
-.s11menuContainer .s11_active.s11_item.s11_light .s11_link .s11_symbol {fill:#fff;}
-.s11menuContainer .s11_item.s11_dark .s11_link .s11_text-wrapper,.s11menuContainer .s11_active.s11_item.s11_dark .s11_link .s11_text-wrapper {color:#000;}
-.s11menuContainer .s11_item.s11_dark .s11_link .s11_symbol,.s11menuContainer .s11_active.s11_item.s11_dark .s11_link .s11_symbol {stroke:#000;}
-.s11menuContainer .s11_active.s11_item.s11_dark .s11_link .s11_symbol {fill:#000;}</style><style type="text/css" data-reactid=".0.0.$s12">.s12 {visibility:hidden;}</style><style type="text/css" data-reactid=".0.0.$s13">.s13 {border-bottom:3px solid rgba(15, 15, 15, 1);height:0 !important;min-height:0 !important;}</style><style type="text/css" data-reactid=".0.0.$s14">.s14_zoomedin {cursor:url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_out.png), url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_out.cur), auto;overflow:hidden;display:block;}
-.s14_zoomedout {cursor:url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_in.png), url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_in.cur), auto;}
-.s14link {display:block;  border-radius:50%;border:0px solid rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, 1);overflow:hidden;}
-.s14img {border-radius:50%;overflow:hidden;}
-.s14imgimage {position:static;box-shadow:#000 0 0 0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}</style><style type="text/css" data-reactid=".0.0.$s15">.s15_zoomedin {cursor:url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_out.png), url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_out.cur), auto;overflow:hidden;display:block;}
-.s15_zoomedout {cursor:url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_in.png), url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_in.cur), auto;}
-.s15link {display:block;  border-radius:50%;border:0px solid rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, 1);overflow:hidden;}
-.s15img {border-radius:50%;overflow:hidden;}
-.s15imgimage {position:static;box-shadow:#000 0 0 0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}</style><style type="text/css" data-reactid=".0.0.$s16">.s16_zoomedin {cursor:url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_out.png), url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_out.cur), auto;overflow:hidden;display:block;}
-.s16_zoomedout {cursor:url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_in.png), url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_in.cur), auto;}
-.s16link {display:block;overflow:hidden;}
-.s16img {overflow:hidden;}
-.s16imgimage {position:static;box-shadow:#000 0 0 0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}</style><style type="text/css" data-reactid=".0.0.$s17">.s17_zoomedin {cursor:url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_out.png), url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_out.cur), auto;overflow:hidden;display:block;}
-.s17_zoomedout {cursor:url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_in.png), url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/cursor_zoom_in.cur), auto;}
-.s17link {display:block;overflow:hidden;}
-.s17img {overflow:hidden;}
-.s17imgimage {position:static;box-shadow:#000 0 0 0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}</style>
+    
 
+    <!-- ScrollToTop Button -->
+    <a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1')"><span
+            class="fa fa-chevron-up"></span></a>
+    <!-- ScrollToTop Button END-->
 
-
-
-
-<style type="text/css" data-reactid=".0.0.$mobileAppBanner">.mobileAppBannercontainer {position:relative;overflow:hidden;z-index:99;height:70px;background-color:#f2f2f2;border-bottom:1px solid #d7d7d7;}
-.mobileAppBannercontainer > div {float:left;margin-left:10px;}
-.mobileAppBannerclose > a {color:#777777;line-height:70px;font-family:Helvetica, sans-serif, Arial;font-size:14px;}
-.mobileAppBannericonbody {width:40px;height:40px;margin-top:15px;border-radius:10px;display:inline-block;  background-size:cover;background-position:center;background-repeat:no-repeat;}
-.mobileAppBannercontainer[data-device~="android"] .mobileAppBannericonbody {border-radius:3px;}
-.mobileAppBannertext {color:#0d0d0d;line-height:20px;margin-top:15px;}
-.mobileAppBannerappname {font-family:"Helvetica Neue", Helvetica, sans-serif, Arial;font-size:13px;font-weight:600;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:175px;}
-.mobileAppBannertagline {font-family:"HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif-light, Arial;font-size:13px;font-weight:normal;}
-.mobileAppBannergetlink {color:#3798eb;line-height:normal;font-family:"HelveticaNeue-Medium", Helvetica, sans-serif, Arial;font-weight:600;font-size:13px;}
-.mobileAppBannercontainer[data-device~="apple"] .mobileAppBannergetlink {font-weight:500;}
-.mobileAppBannerbaselinehack {height:14px;line-height:0px;display:inline-block;}
-.mobileAppBannerget {border:1px solid #3798eb;border-radius:3px;padding:3px 10px;display:inline-block;}@media all and (max-width: 400px) and (min-width: 0px){.mobileAppBannerget {position:absolute;top:22.5px;right:10px;float:none !important;}}
-@media all and (min-width: 401px){.mobileAppBannerget {margin-top:22.5px;margin-left:30px !important;}}</style><style type="text/css" data-reactid=".0.0.$deadComp">.deadComp {background:transparent;}</style><style type="text/css" data-reactid=".0.0.$siteBackground">.siteBackground {width:100%;position:absolute;}
-.siteBackgroundbgBeforeTransition {position:absolute;top:0;}
-.siteBackgroundbgAfterTransition {position:absolute;top:0;}</style><style type="text/css" data-reactid=".0.0.$loginDialog">.loginDialog {position:fixed;width:100%;height:100%;z-index:99;font-family:Arial, sans-serif;font-size:1em;color:#9C9C9C;}
-.loginDialogblockingLayer {background-color:rgba(85, 85, 85, 0.75);position:fixed;top:0;right:0;bottom:0;left:0;visibility:visible;zoom:1;overflow:auto;}
-.loginDialogdialog {background-color:rgba(170, 170, 170, 0.7);width:455px;position:fixed;padding:20px;}
-.loginDialog_wrapper {background-color:rgba(255, 255, 255, 1);padding:45px 40px 0 40px;}
-.loginDialogxButton {position:absolute;top:-14px;right:-14px;cursor:pointer;background:transparent url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/viewer_login_sprite.png) no-repeat right top;height:30px;width:30px;}
-.loginDialogxButton:hover {background-position:right -80px;}
-.loginDialogheader {padding-bottom:25px;line-height:30px;}
-.loginDialogfavIcon {float:left;margin:7px 7px 0 0;width:16px;height:16px;}
-.loginDialogtitle {font-size:20px;font-weight:bold;color:#555555;}
-.loginDialog[data-state~="mobile"] {position:absolute;width:100%;height:100%;z-index:99;font-family:Arial, sans-serif;font-size:1em;color:#9C9C9C;top:0;}
-.loginDialog[data-state~="mobile"] .loginDialogheader {padding-bottom:10px;line-height:30px;}
-.loginDialog[data-state~="mobile"] .loginDialogfavIcon {display:none;}
-.loginDialog[data-state~="desktop"] .loginDialogfavIcon {display:none;}
-.loginDialog[data-state~="mobile"] .loginDialogtitle {font-size:14px;}
-.loginDialog[data-state~="mobile"] .loginDialogdialog {width:260px;padding:10px;position:absolute;}
-.loginDialog[data-state~="mobile"] .loginDialog_footer {margin-top:0;padding-bottom:10px;}
-.loginDialog[data-state~="mobile"] .loginDialogcancel {font-size:14px;line-height:30px;}
-.loginDialog[data-state~="mobile"] .loginDialog_wrapper {padding:14px 12px 0 12px;}
-.loginDialog[data-state~="mobile"] .loginDialogsubmitButton {height:30px;width:100px;font-size:14px;}
-.loginDialog_forgot {text-align:left;font-size:12px;}
-.loginDialog_forgot a {color:#0198ff;border-bottom:1px solid #0198ff;}
-.loginDialog_forgot a:hover {color:#0044ff;border-bottom:1px solid #0044ff;}
-.loginDialog_error {font-size:12px;color:#d74401;text-align:right;}
-.loginDialog_footer {width:100%;margin-top:27px;padding-bottom:40px;}
-.loginDialogcancel {color:#9C9C9C;font-size:18px;text-decoration:underline;line-height:36px;}
-.loginDialogcancel:hover {color:#9c3c3c;}
-.loginDialogpasswordInput label {font-size:14px;}
-.loginDialogpasswordInput label[data-type="password"] {font-size:14px;line-height:30px;height:30px;}
-.loginDialogsubmitButton {float:right;cursor:pointer;border:solid 2px #0064a8;height:36px;width:143px;background:transparent url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/viewer_login_sprite.png) repeat-x right -252px;color:#ffffff;font-size:24px;font-weight:bold;box-shadow:0 1px 3px rgba(0, 0, 0, 0.5);}
-.loginDialogsubmitButton:hover {background-position:right -352px;border-color:#004286;}
-.loginDialog[data-state="normal"] .loginDialogerror {display:none;}
-.loginDialog[data-state="error"] .loginDialogerror {display:block;font-size:12px;color:#d74401;text-align:right;}
-.loginDialog[data-state="error"] .loginDialogpasswordInput {border-color:#d74401;}
-.loginDialogpasswordInput {font-size:1em;}
-.loginDialogpasswordInput label {float:none;font-size:17px;line-height:25px;color:#585858;}
-.loginDialogpasswordInput[data-state~="mobile"] label {float:none;font-size:14px;line-height:20px;color:#585858;}
-.loginDialogpasswordInputinput {padding:0 15px;width:100%;height:42px;font-size:19px;line-height:42px;color:#0198ff;margin:0 -3px;background:transparent url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/viewer_login_sprite.png) repeat-x right -170px;border:solid 1px #a1a1a1;box-sizing:border-box;}
-.loginDialogpasswordInput[data-state~="mobile"] .loginDialogpasswordInputinput {padding:0 15px;width:100%;height:30px;font-size:14px;line-height:30px;color:#0198ff;margin:0 -3px;background:transparent url(//static.parastorage.com/services/skins/2.1212.0/images/wysiwyg/core/themes/base/viewer_login_sprite.png) repeat-x right -170px;border:solid 1px #a1a1a1;box-sizing:border-box;}
-.loginDialogpasswordInputinput[data-type="password"] {font-size:38px;}
-.loginDialogpasswordInput[data-state~="mobile"] .loginDialogpasswordInputinput[data-type="password"] {font-size:14px;}
-.loginDialogpasswordInputerrorMessage {display:block;font-size:12px;color:#d74401;text-align:right;height:15px;}
-.loginDialogpasswordInput:not([data-state~="invalid"]) .loginDialogpasswordInputerrorMessage {visibility:hidden;}
-.loginDialogpasswordInput[data-state~="invalid"] .loginDialogpasswordInputerrorMessage {visibility:visible;}
-.loginDialogpasswordInput[data-state~="invalid"] input {border-color:#d74401;}
-.loginDialogpasswordInput[data-state~="invalid"] .loginDialogpasswordInputinput {border-color:red;}</style><style type="text/css" data-reactid=".0.0.$testStyle">.testStyles {position:absolute; display: none; z-index: 3}</style><div class="testStyles" data-reactid=".0.0.z"></div><link rel="stylesheet" type="text/css" href="./vheeler_files/css" data-reactid=".0.0.$gf_0"><link rel="stylesheet" type="text/css" href="./vheeler_files/latin.css" data-reactid=".0.0.$https=2//static=1parastorage=1com/services/santa/1=11392=121/static/css/user-site-fonts/latin=1css"><div style="overflow:hidden;visibility:hidden;max-height:0;max-width:0;position:absolute;" data-reactid=".0.0.$fontsLoader"><style data-reactid=".0.0.$fontsLoader.0">.font-ruler-content::after {content:"@#$%%^&*~IAO"}</style><div style="position: absolute; overflow: hidden; font-size: 1200px; left: -2000px; visibility: hidden; width: 8183px; height: 380px;" data-reactid=".0.0.$fontsLoader.$din-next-w01-light&gt;&lt;span style=0color=2#FFFFFE&gt;&lt;span style=0font-weight=2normal&gt;&lt;span style=0font-style=2normal&gt;&lt;span style=0font-size=220px&gt;&lt;span style=0letter-spacing=20=11em&gt;+91-7032409634&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/h1&gt;
-
-&lt;h1 class=0font_0 style=0font-size=220px">
-
-
-&lt;h1 class=0font_0 style=0font-size=2 20px.0.1"></span></div></div></div></div>
-
-
-<div id="SITE_BACKGROUND" class="siteBackground" style="position: absolute; top: 0px; height: 3586px; width: 1280px;" data-reactid=".0.$SITE_BACKGROUND"><div id="SITE_BACKGROUND_previous_" class="siteBackgroundprevious" data-reactid=".0.$SITE_BACKGROUND.$noPrev"><div id="SITE_BACKGROUND_previousImage_" class="siteBackgroundpreviousImage" data-reactid=".0.$SITE_BACKGROUND.$noPrev.0"></div><div id="SITE_BACKGROUNDpreviousVideo" class="siteBackgroundpreviousVideo" data-reactid=".0.$SITE_BACKGROUND.$noPrev.1"></div><div id="SITE_BACKGROUND_previousOverlay_" class="siteBackgroundpreviousOverlay" data-reactid=".0.$SITE_BACKGROUND.$noPrev.2"></div></div><div id="SITE_BACKGROUND_current_jt80h" style="top:0;height:100%;width:100%;background-color:rgba(27, 27, 30, 1);display:;position:fixed;" class="siteBackgroundcurrent" data-reactid=".0.$SITE_BACKGROUND.$jt80h"><div id="SITE_BACKGROUND_currentImage_jt80h" style="position: absolute; top: 0px; height: 100%; width: 100%; opacity: 0.42; background-image: url(&quot;https://static.wixstatic.com/media/96ebded5f1664447974c6bdf518238d3.jpg/v1/fill/w_1920,h_1272,al_c,q_85,usm_0.66_1.00_0.01/96ebded5f1664447974c6bdf518238d3.jpg&quot;); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;" data-type="bgimage" class="siteBackgroundcurrentImage" data-reactid=".0.$SITE_BACKGROUND.$jt80h.$background_currentImage_fixed" data-image-css-background-size="cover" data-image-css-background-position="center center" data-image-css-background-repeat="no-repeat"></div><div id="SITE_BACKGROUNDcurrentVideo" class="siteBackgroundcurrentVideo" data-reactid=".0.$SITE_BACKGROUND.$jt80h.1" style="position: relative; min-width: 0px; min-height: 0px; top: 0px; left: 0px;"></div><div id="SITE_BACKGROUND_currentOverlay_jt80h" style="position:absolute;top:0;width:100%;height:100%;background-attachment:fixed;" class="siteBackgroundcurrentOverlay" data-reactid=".0.$SITE_BACKGROUND.$jt80h.2"></div></div></div><div class="SITE_ROOT" id="SITE_ROOT" style="width:980px;padding-bottom:41px;" data-reactid=".0.$SITE_ROOT"><div id="SITE_STRUCTURE" style="top: 0px; width: 980px; position: static; height: 3586px;" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot"><div style="top: 0px; width: 980px; height: 98px; position: fixed; z-index: 50; left: 0px;" class="s0" data-state=" fixedPosition" id="SITE_HEADER" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER"><div id="SITE_HEADERscreenWidthBackground" class="s0screenWidthBackground" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.0" style="width: 1280px; left: -150px;"><div class="s0_bg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.0.0"></div></div><div id="SITE_HEADERcenteredContent" class="s0centeredContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1"><div id="SITE_HEADERbg" class="s0bg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.0"></div>
-
-<div id="" class="s0inlineContent"><div style="top: 43px; left: 76px; width: 249px; position: absolute;" class="s1" id="comp-ifpbovqj" data-reactid="">
-
-<h1 class="font_0" style="line-height:1em"><span><span style="letter-spacing:0.25em">
-
-<a href="http://www.vheeler.com" target="_self">VHEELER</a>
-
-</span></span></h1>
+    <!-- Footer - bloc-8 -->
+    <!-- <div class="bloc bgc-platinum l-bloc" id="bloc-8">
+        <div class="container bloc-sm">
+            <div class="row">
+                <div class="col-xs-12 col-md-8 col-md-offset-2">
+                    <div class="col-sm-3 text-center">
+                        <a class="social-lg" href="http://www.twitter.com/BootstrapOcean" target="_blank"><span
+                                class="fa fa-twitter icon-md icon-carmine-pink"></span></a>
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <a class="social-lg" href="https://www.facebook.com/BootstrapOcean" target="_blank"><span
+                                class="fa fa-facebook icon-md icon-carmine-pink"></span></a>
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <a class="social-lg"
+                           href="https://plus.google.com/b/116513433102470788789/116513433102470788789/posts"
+                           target="_blank"><span class="fa fa-google-plus icon-md icon-carmine-pink"></span></a>
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <a class="social-lg" href="#"><span class="fa fa-dribbble icon-md icon-carmine-pink"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    
+    <!-- Footer - bloc-8 END -->
 </div>
-<div id="comp-ifgfo9dg" data-menuborder-y="0" data-menubtn-border="0" data-ribbon-els="0" data-label-pad="0" data-ribbon-extra="0" style="top: 31px; left: 296px; width: 684px; position: absolute; height: 38px;" class="s2" data-state="right notMobile" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg" data-dropmode="dropDown"><div style="display: inline-block; text-align: right; overflow: visible; height: 38px;" id="comp-ifgfo9dgitemsContainer" class="s2itemsContainer" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0"><a style="display: inherit; color: grey; width: 64px; height: 38px; position: relative; box-sizing: border-box; overflow: visible;" data-listposition="center" href="http://vheeler.com" target="_self" class="s2repeaterButton" data-state="menu selected idle link notMobile" id="comp-ifgfo9dg0" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$0" data-originalgapbetweentextandbtn="3"><div class="s2repeaterButton_gapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$0.0"><div style="text-align:center;" id="comp-ifgfo9dg0bg" class="s2repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$0.0.0"><p style="text-align: center; line-height: 38px;" id="comp-ifgfo9dg0label" class="s2repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$0.0.0.0">HOME</p></div></div></a><a style="display: inherit; color: grey; width: 93px; height: 38px; position: relative; box-sizing: border-box; overflow: visible;" data-listposition="center" data-anchor="dataItem-ifm7h3ju1" href="http://vheeler.com" target="_self" class="s2repeaterButton" data-state="menu  idle link notMobile" id="comp-ifgfo9dg1" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$1" data-originalgapbetweentextandbtn="2"><div class="s2repeaterButton_gapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$1.0"><div style="text-align:center;" id="comp-ifgfo9dg1bg" class="s2repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$1.0.0"><p style="text-align: center; line-height: 38px;" id="comp-ifgfo9dg1label" class="s2repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$1.0.0.0">ABOUT US</p></div></div></a><a style="display: inherit; color: grey; width: 95px; height: 38px; position: relative; box-sizing: border-box; overflow: visible;" data-listposition="center" data-anchor="dataItem-ioocp7pd" href="http://vheeler.com" target="_self" class="s2repeaterButton" data-state="menu  idle link notMobile" id="comp-ifgfo9dg2" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$2" data-originalgapbetweentextandbtn="2"><div class="s2repeaterButton_gapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$2.0"><div style="text-align:center;" id="comp-ifgfo9dg2bg" class="s2repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$2.0.0"><p style="text-align: center; line-height: 38px;" id="comp-ifgfo9dg2label" class="s2repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$2.0.0.0">PLATFORM</p></div></div></a><a style="display: inherit; color: grey; width: 61px; height: 38px; position: relative; box-sizing: border-box; overflow: visible;" data-listposition="center" data-anchor="dataItem-ifm7h3kg1" href="http://vheeler.com" target="_self" class="s2repeaterButton" data-state="menu  idle link notMobile" id="comp-ifgfo9dg3" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$3" data-originalgapbetweentextandbtn="3"><div class="s2repeaterButton_gapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$3.0"><div style="text-align:center;" id="comp-ifgfo9dg3bg" class="s2repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$3.0.0"><p style="text-align: center; line-height: 38px;" id="comp-ifgfo9dg3label" class="s2repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$3.0.0.0">TEAM</p></div></div></a><a style="display: inherit; color: grey; width: 88px; height: 38px; position: relative; box-sizing: border-box; overflow: visible;" data-listposition="right" data-anchor="dataItem-igl58cjk" href="http://vheeler.com" target="_self" class="s2repeaterButton" data-state="menu  idle link notMobile" id="comp-ifgfo9dg4" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$4" data-originalgapbetweentextandbtn="3"><div class="s2repeaterButton_gapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$4.0"><div style="text-align:center;" id="comp-ifgfo9dg4bg" class="s2repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$4.0.0"><p style="text-align: center; line-height: 38px;" id="comp-ifgfo9dg4label" class="s2repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.$4.0.0.0">CONTACT</p></div></div></a><a style="display: inline-block; box-sizing: border-box; color: grey; height: 0px; overflow: hidden; position: absolute;" data-listposition="right" class="s2repeaterButton" data-state="menu  idle header notMobile" id="comp-ifgfo9dg__more__" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.5" data-originalgapbetweentextandbtn="2"><div class="s2repeaterButton_gapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.5.0"><div style="text-align:center;" id="comp-ifgfo9dg__more__bg" class="s2repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.5.0.0"><p style="line-height:38px;text-align:center;" id="comp-ifgfo9dg__more__label" class="s2repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.0.5.0.0.0">More...</p></div></div></a></div><div id="comp-ifgfo9dgmoreButton" class="s2moreButton" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.1"></div><div style="visibility:hidden;" data-drophposition="" data-dropalign="right" id="comp-ifgfo9dgdropWrapper" class="s2dropWrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.2"><div style="visibility:hidden;" id="comp-ifgfo9dgmoreContainer" class="s2moreContainer" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ifgfo9dg.2.0"></div></div></div><div style="top:31px;bottom:;left:26px;right:;width:40px;height:49px;position:absolute;" class="style-ihkej8h9" id="comp-ihkej3mz" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-ihkej3mz"><style type="text/css">.style-ihkej8h9 svg {width:100%;height:100%;position:absolute;top:0;right:0;bottom:0;left:0;margin:auto;fill:#FFFFFF;fill-opacity:1;stroke:rgba(0, 0, 0, 1);stroke-width:0px;}</style><a href="http://vheeler.com" target="_self"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" data-original-aspect-ratio="0.8" style="width: 40px; height: 50px;"><g transform="translate(-13.066666603088379,-8.166666984558105)"><path d="M22.442001 25.480001l14.504 14.373334l-17.476667 17.313334l-4.671333 -4.638666L27.570667 39.853334L13.066667 25.480001l17.476667 -17.313334l4.671333 4.638666L22.442001 25.480001zM52.266668 12.805333L47.595334 8.166667L30.118667 25.480001l17.476667 17.313334l4.671333 -4.638666L39.494001 25.480001L52.266668 12.805333z"></path></g></svg></a></div></div></div></div><div style="width: 980px; position: absolute; left: 0px; height: 5px; bottom: auto; top: 3581px;" class="s4_footer s4" data-state=" " id="SITE_FOOTER" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_FOOTER"><div id="SITE_FOOTERscreenWidthBackground" class="s4screenWidthBackground" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_FOOTER.0" style="width: 1280px; left: -150px;"><div class="s4_bg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_FOOTER.0.0"></div></div><div id="SITE_FOOTERcenteredContent" class="s4centeredContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_FOOTER.1"><div id="SITE_FOOTERbg" class="s4bg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_FOOTER.1.0"></div><div id="SITE_FOOTERinlineContent" class="s4inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_FOOTER.1.1"></div></div></div><div style="top: 98px; width: 980px; height: 3483px; position: absolute; left: 0px;" class="s5" data-state="" id="PAGES_CONTAINER" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER"><div id="PAGES_CONTAINERscreenWidthBackground" class="s5screenWidthBackground" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.0" style="width: 1280px; left: -150px;"></div><div id="PAGES_CONTAINERcenteredContent" class="s5centeredContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1"><div id="PAGES_CONTAINERbg" class="s5bg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.0"></div><div id="PAGES_CONTAINERinlineContent" class="s5inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1"><div style="top:0;bottom:;left:0;right:;width:980px;height:3483px;position:absolute;" class="s6" id="SITE_PAGES" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES"><div style="top: 0px; left: 0px; width: 980px; height: 3483px; position: absolute;" class="s7" id="jt80h" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h"><div id="jt80hbg" class="s7bg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.0"></div><div id="jt80hinlineContent" class="s7inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1"><div style="top: 649px; height: 714px; position: absolute; width: 980px; left: 0px;" class="s8" id="comp-iooamuyg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iooamuyg"><div style="position: absolute; top: 0px; width: 1280px; height: 714px; left: -150px; overflow: hidden; clip: rect(0px 1280px 714px -150px);" id="comp-iooamuygbackground" class="s8background" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iooamuyg.0"><div id="comp-iooamuygbackgroundMedia" style="position: absolute; pointer-events: none; top: 0px; width: 1280px; left: 0px; height: 714px; background-color: rgb(250, 250, 235);" data-effect="none" data-fitting="fill" data-align="center" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iooamuyg.0.$media_preview"><div style="width:100%;top:;bottom:;left:;right:;height:;position:absolute;" class="bgImage" id="comp-iooamuygimage" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iooamuyg.0.$media_preview.$comp-iooamuygimage"><div style="position: absolute; width: 100%; opacity: 0.07; height: 714px; background-image: url(&quot;https://static.wixstatic.com/media/12c5d996ef78478ba8d9a06b9e8a4c39.jpg/v1/fill/w_1980,h_1104,al_c,q_85/12c5d996ef78478ba8d9a06b9e8a4c39.jpg&quot;); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;" data-type="bgimage" id="comp-iooamuygimageimage" class="bgImageimage" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iooamuyg.0.$media_preview.$comp-iooamuygimage.0" data-image-css-height="714" data-image-css-background-size="cover" data-image-css-background-repeat="no-repeat" data-image-css-background-position="center center"></div></div></div></div><div id="comp-iooamuyginlineContent" class="s8inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iooamuyg.1"><div style="top: 37px; left: 15px; width: 931px; position: absolute;" class="s1" id="comp-iooaxg2f" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iooamuyg.1.$comp-iooaxg2f"><h2 class="font_2" style="font-size:67px; line-height:0.9em"><span class="color_15"><span style="font-size:67px">About us</span></span></h2>
-</div><div style="top: 143px; left: 25px; width: 942px; position: absolute;" class="s1" id="comp-iooaz3uj" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iooamuyg.1.$comp-iooaz3uj"><p class="font_8" style="font-size:33px"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif"><span style="font-size:33px">Vheeler is a powerful combination of digital &amp; offline marketing. We bring the ease, speed and accuracy of digital marketing in the physical world.</span></span></p>
+<!-- Main container END -->
+</body>
 
-<p class="font_8" style="font-size:33px">&nbsp;</p>
-
-<p class="font_8" style="font-size:33px"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif"><span style="font-size:33px">We display ads on GPS tracked intra-city cabs plying on roads through a digital screen attached to cars' rear windscreens. The ads displayed are controlled and managed remotely through an easy-to-operate tractable dashboard. Vheeler allows marketers to display dynamic location specific ads for their brands and analyze results easily through the dashboard, just like on any digital platform.</span></span></p>
-</div></div></div><div style="top: 2320px; height: 421px; position: absolute; width: 980px; left: 0px;" class="s8" id="comp-ifm7h3ip" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3ip"><div style="position: absolute; top: 0px; width: 1280px; height: 421px; left: -150px; overflow: hidden; clip: rect(0px 1280px 421px -150px);" id="comp-ifm7h3ipbackground" class="s8background" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3ip.0"><div id="comp-ifm7h3ipbackgroundMedia" style="position: absolute; pointer-events: none; top: 0px; width: 1280px; left: 0px; height: 421px; background-color: rgb(218, 218, 218);" data-effect="none" data-fitting="fill" data-align="center" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3ip.0.$media_preview"></div></div><div id="comp-ifm7h3ipinlineContent" class="s8inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3ip.1"><div style="top: 107px; left: 27px; width: 918px; position: absolute;" class="s1" id="comp-ifm7h3iq1" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3ip.1.$comp-ifm7h3iq1"><h2 style="line-height: 0.9em;" class="font_2"><span style="line-height:0.9em;">OUR</span></h2>
-
-<h2 style="line-height: 0.9em;" class="font_2"><span style="line-height:0.9em;">TEAM</span></h2>
-</div><div style="top:82px;bottom:;left:27px;right:;width:51px;height:12px;position:absolute;" class="s9" id="comp-ig9ikmdu" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3ip.1.$comp-ig9ikmdu"><div id="comp-ig9ikmduline" class="s9line" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3ip.1.$comp-ig9ikmdu.0"></div></div><div style="top: 285px; left: 27px; width: 541px; position: absolute;" class="s1" id="comp-igkqcr6s" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3ip.1.$comp-igkqcr6s"><p style="line-height: 1.6em;" class="font_7"><span style="line-height:1.6em;">I'm a paragraph. Click here to add your own text and edit me.</span></p>
-
-<p style="line-height: 1.6em;" class="font_7"><span style="line-height:1.6em;">It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.&nbsp;</span></p>
-
-<p style="line-height: 1.7em;" class="font_8">&nbsp;</p>
-</div></div></div><div style="top: 1363px; height: 1262px; position: absolute; width: 980px; left: 0px;" class="s8" id="comp-ifm7h3jd1" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1"><div style="position: absolute; top: 0px; width: 1280px; height: 1262px; left: -150px; overflow: hidden; clip: rect(0px 1280px 1262px -150px);" id="comp-ifm7h3jd1background" class="s8background" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.0"><div id="comp-ifm7h3jd1backgroundMedia" style="position: fixed; pointer-events: none; top: 0px; transform-style: preserve-3d; width: 1280px; left: 0px; height: 1262px; background-color: rgb(27, 27, 30);" data-effect="BackgroundParallax" data-fitting="fill" data-align="center" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.0.$media_preview"><div style="width: 100%; position: absolute; transform: matrix(1, 0, 0, 1, 0, 137);" class="bgImage" id="comp-ifm7h3jd1image" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.0.$media_preview.$comp-ifm7h3jd1image"><div style="position: absolute; width: 100%; height: 1262px; background-image: url(&quot;https://static.wixstatic.com/media/e1c78c_8f2c0255955849019724a67353839dad.jpg/v1/fill/w_1095,h_1080,al_c,q_85/e1c78c_8f2c0255955849019724a67353839dad.jpg&quot;); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;" data-type="bgimage" id="comp-ifm7h3jd1imageimage" class="bgImageimage" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.0.$media_preview.$comp-ifm7h3jd1image.0" data-image-css-height="1262" data-image-css-background-size="cover" data-image-css-background-repeat="no-repeat" data-image-css-background-position="center center"></div></div></div></div><div id="comp-ifm7h3jd1inlineContent" class="s8inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1"><div style="top: 62px; left: 15px; width: 931px; position: absolute;" class="s1" id="comp-ifm7h3je" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ifm7h3je"><h2 class="font_2" style="line-height: 0.9em; font-size: 67px;"><span style="font-size:67px;">The&nbsp;Platform</span></h2>
-</div><div style="top:43px;bottom:;left:15px;right:;width:51px;height:12px;position:absolute;" class="s9" id="comp-ig9f9pno" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ig9f9pno"><div id="comp-ig9f9pnoline" class="s9line" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ig9f9pno.0"></div></div><div style="top:145px;bottom:;left:25px;right:;width:274px;height:240px;position:absolute;" class="s10" id="comp-ioo9abfe" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9abfe"><div id="comp-ioo9abfebg" class="s10bg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9abfe.0"></div><div id="comp-ioo9abfeinlineContent" class="s10inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9abfe.1"><div style="top: 11px; left: 0px; width: 274px; position: absolute;" class="s1" id="comp-ioo9c35s" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9abfe.1.$comp-ioo9c35s"><h2 class="font_2" style="font-size:32px; text-align:center"><span style="color:#FFFFFF"><span style="font-size:32px">Dynamic</span></span></h2>
-</div><div style="top: 64px; left: 0px; width: 259px; position: absolute;" class="s1" id="comp-ioo9mamh" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9abfe.1.$comp-ioo9mamh"><ul class="color_11 font_8" style="font-family:georgia,palatino,book antiqua,palatino linotype,serif; font-size:15px; letter-spacing:0.01em">
-	<li>
-	<p class="font_8" style="font-size:17px"><span style="font-size:17px"><span style="letter-spacing:0em"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Alter ads remotely though Vheeler web-portal</span></span></span></span><br>
-	&nbsp;</p>
-	</li>
-	<li>
-	<p class="font_8" style="font-size:17px"><span style="font-size:17px"><span style="letter-spacing:0em"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Modified ads appear instantly</span></span></span></span><br>
-	&nbsp;</p>
-	</li>
-	<li>
-	<p class="font_8" style="font-size:17px"><span style="font-size:17px"><span style="letter-spacing:0em"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Allot multiple ad creatives for single campaign</span></span></span></span></p>
-	</li>
-</ul>
-</div></div></div><div style="top:145px;bottom:;left:351px;right:;width:274px;height:240px;position:absolute;" class="s10" id="comp-ioo9dg7x" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9dg7x"><div id="comp-ioo9dg7xbg" class="s10bg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9dg7x.0"></div><div id="comp-ioo9dg7xinlineContent" class="s10inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9dg7x.1"><div style="top: 11px; left: 0px; width: 274px; position: absolute;" class="s1" id="comp-ioo9dg8x" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9dg7x.1.$comp-ioo9dg8x"><h2 class="font_2" style="font-size:32px; text-align:center"><span style="color:#FFFFFF"><span style="font-size:32px">Hyperlocal</span></span></h2>
-</div><div style="top: 64px; left: 0px; width: 259px; position: absolute;" class="s1" id="comp-ioo9yvsq" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9dg7x.1.$comp-ioo9yvsq"><ul class="color_11 font_8" style="font-family:georgia,palatino,book antiqua,palatino linotype,serif; font-size:15px; letter-spacing:0.01em">
-	<li>
-	<p class="font_8" style="font-size: 17px;"><span style="font-size:17px;"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Ability to show different ads geography-wise</span></span></span><br>
-	&nbsp;</p>
-	</li>
-	<li>
-	<p class="font_8" style="font-size: 17px;"><span style="font-size:17px;"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Choose to run ads only in specific locations within a city</span></span></span></p>
-	</li>
-</ul>
-</div></div></div><div style="top:145px;bottom:;left:680px;right:;width:274px;height:240px;position:absolute;" class="s10" id="comp-ioo9dzfz" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9dzfz"><div id="comp-ioo9dzfzbg" class="s10bg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9dzfz.0"></div><div id="comp-ioo9dzfzinlineContent" class="s10inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9dzfz.1"><div style="top: 11px; left: 0px; width: 274px; position: absolute;" class="s1" id="comp-ioo9dzjr" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9dzfz.1.$comp-ioo9dzjr"><h2 class="font_2" style="font-size:32px; text-align:center"><span style="color:#FFFFFF"><span style="font-size:32px">Flexible</span></span></h2>
-</div><div style="top: 64px; left: 0px; width: 259px; position: absolute;" class="s1" id="comp-iooa68ws" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9dzfz.1.$comp-iooa68ws"><ul class="color_11 font_8" style="font-family:georgia,palatino,book antiqua,palatino linotype,serif; font-size:15px; letter-spacing:0.01em">
-	<li>
-	<p class="font_8" style="font-size:17px"><span style="font-size:17px"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Ability to set-up different ads for different time-slots during the day, week or month</span></span></span><br>
-	&nbsp;</p>
-	</li>
-	<li>
-	<p class="font_8" style="font-size:17px"><span style="font-size:17px"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Unlimited flexibility</span></span></span></p>
-	</li>
-</ul>
-</div></div></div><div style="top:412px;bottom:;left:25px;right:;width:274px;height:240px;position:absolute;" class="s10" id="comp-ioo9g1hg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg"><div id="comp-ioo9g1hgbg" class="s10bg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg.0"></div><div id="comp-ioo9g1hginlineContent" class="s10inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg.1"><div style="top: 11px; left: 0px; width: 274px; position: absolute;" class="s1" id="comp-ioo9g1ll" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg.1.$comp-ioo9g1ll"><h2 class="font_2" style="font-size:32px; text-align:center"><span style="color:#FFFFFF"><span style="font-size:32px">Complete Control</span></span></h2>
-</div><div style="top: 59px; left: 0px; width: 259px; position: absolute;" class="s1" id="comp-iooa9623" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg.1.$comp-iooa9623"><ul class="color_11 font_8" style="font-family:georgia,palatino,book antiqua,palatino linotype,serif; font-size:15px; letter-spacing:0.01em">
-	<li>
-	<p class="font_8" style="font-size: 17px;"><span style="font-size:17px;"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Set-up &amp; manage campaigns through easy-to-operate portal</span></span></span><br>
-	&nbsp;</p>
-	</li>
-	<li>
-	<p class="font_8" style="font-size: 17px;"><span style="font-size:17px;"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">No dependence on agencies</span></span></span><br>
-	&nbsp;</p>
-	</li>
-	<li>
-	<p class="font_8" style="font-size: 17px;"><span style="font-size:17px;"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Set budget, choose locations, upload creatives &amp; done!</span></span></span></p>
-	</li>
-</ul>
-</div></div></div><div style="top:412px;bottom:;left:352px;right:;width:274px;height:240px;position:absolute;" class="s10" id="comp-ioo9g1hg1" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg1"><div id="comp-ioo9g1hg1bg" class="s10bg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg1.0"></div><div id="comp-ioo9g1hg1inlineContent" class="s10inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg1.1"><div style="top: 11px; left: 0px; width: 274px; position: absolute;" class="s1" id="comp-ioo9g1lt" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg1.1.$comp-ioo9g1lt"><h2 class="font_2" style="font-size: 32px; text-align: center;"><span style="font-size:32px;"><span style="color:#FFFFFF">Analytics</span></span></h2>
-</div><div style="top: 64px; left: -1px; width: 259px; position: absolute;" class="s1" id="comp-iooa8yek" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg1.1.$comp-iooa8yek"><ul class="color_11 font_8" style="font-family:georgia,palatino,book antiqua,palatino linotype,serif; font-size:15px; letter-spacing:0.01em">
-	<li>
-	<p class="font_8" style="font-size:17px"><span style="font-size:17px"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Track campaign report on Vheeler dashboard</span></span></span><br>
-	&nbsp;</p>
-	</li>
-	<li>
-	<p class="font_8" style="font-size:17px"><span style="font-size:17px"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Detailed map based report on time, distance &amp; geographies covered</span></span></span></p>
-	</li>
-</ul>
-</div></div></div><div style="top:412px;bottom:;left:685px;right:;width:274px;height:240px;position:absolute;" class="s10" id="comp-ioo9g1hg2" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg2"><div id="comp-ioo9g1hg2bg" class="s10bg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg2.0"></div><div id="comp-ioo9g1hg2inlineContent" class="s10inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg2.1"><div style="top: 11px; left: 0px; width: 274px; position: absolute;" class="s1" id="comp-ioo9g1m3" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg2.1.$comp-ioo9g1m3"><h2 class="font_2" style="font-size:32px; text-align:center"><span style="color:#FFFFFF"><span style="font-size:32px">Pay Per Minute</span></span></h2>
-</div><div style="top: 64px; left: -5px; width: 259px; position: absolute;" class="s1" id="comp-iooa8pya" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jd1.1.$comp-ioo9g1hg2.1.$comp-iooa8pya"><ul class="color_11 font_8" style="font-family:georgia,palatino,book antiqua,palatino linotype,serif; font-size:15px; letter-spacing:0.01em">
-	<li>
-	<p class="font_8" style="font-size:17px"><span style="font-size:17px"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Pay only for number of minutes your ad is displayed</span></span></span><br>
-	&nbsp;</p>
-	</li>
-	<li>
-	<p class="font_8" style="font-size:17px"><span style="font-size:17px"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">You are charged only when the car is moving on the road in your specified locations</span></span></span></p>
-	</li>
-</ul>
-</div></div></div></div></div><div style="top: 0px; bottom: 0px; right: 27px; position: fixed; margin: auto; z-index: 50; width: 126px; height: 178px;" class="s11" id="comp-ifm7h3jp1" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1"><ul class="s11_orientation-right s11_text-align-right s11menuContainer" id="comp-ifm7h3jp1menuContainer" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0"><li class="s11_item s11_active" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3jt1"><a class="s11_link" data-anchor="dataItem-ifm7h3jt1" href="http://vheeler.com" target="_self" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3jt1.0"><svg width="12" height="12" viewBox="0 0 24 24" class="s11_symbol" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3jt1.0.$img-s11_symbolcircle"><circle cx="12" cy="12" r="10"></circle></svg><span class="s11_text-wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3jt1.0.$textWrapper"><span class="s11_label" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3jt1.0.$textWrapper.0">HOME</span></span></a></li><li class="s11_item" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3ju1"><a class="s11_link" data-anchor="dataItem-ifm7h3ju1" href="http://vheeler.com" target="_self" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3ju1.0"><svg width="12" height="12" viewBox="0 0 24 24" class="s11_symbol" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3ju1.0.$img-s11_symbolcircle"><circle cx="12" cy="12" r="10"></circle></svg><span class="s11_text-wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3ju1.0.$textWrapper"><span class="s11_label" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3ju1.0.$textWrapper.0">ABOUT US</span></span></a></li><li class="s11_item" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ioocp7pd"><a class="s11_link" data-anchor="dataItem-ioocp7pd" href="http://vheeler.com" target="_self" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ioocp7pd.0"><svg width="12" height="12" viewBox="0 0 24 24" class="s11_symbol" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ioocp7pd.0.$img-s11_symbolcircle"><circle cx="12" cy="12" r="10"></circle></svg><span class="s11_text-wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ioocp7pd.0.$textWrapper"><span class="s11_label" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ioocp7pd.0.$textWrapper.0">PLATFORM</span></span></a></li><li class="s11_item" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3kg1"><a class="s11_link" data-anchor="dataItem-ifm7h3kg1" href="http://vheeler.com" target="_self" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3kg1.0"><svg width="12" height="12" viewBox="0 0 24 24" class="s11_symbol" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3kg1.0.$img-s11_symbolcircle"><circle cx="12" cy="12" r="10"></circle></svg><span class="s11_text-wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3kg1.0.$textWrapper"><span class="s11_label" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-ifm7h3kg1.0.$textWrapper.0">TEAM</span></span></a></li><li class="s11_item" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-igl58cjk"><a class="s11_link" data-anchor="dataItem-igl58cjk" href="http://vheeler.com" target="_self" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-igl58cjk.0"><svg width="12" height="12" viewBox="0 0 24 24" class="s11_symbol" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-igl58cjk.0.$img-s11_symbolcircle"><circle cx="12" cy="12" r="10"></circle></svg><span class="s11_text-wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-igl58cjk.0.$textWrapper"><span class="s11_label" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jp1.0.$dataItem-igl58cjk.0.$textWrapper.0">CONTACT</span></span></a></li></ul></div><div style="top: -132px; left: 0px; width: 0px; height: 90px; position: absolute;" class="s12" id="comp-ifm7h3jt" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3jt"></div><div style="top: 649px; left: 0px; width: 0px; height: 90px; position: absolute;" class="s12" id="comp-ifm7h3ju" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3ju"></div><div style="top: 2201px; left: 0px; width: 0px; height: 90px; position: absolute;" class="s12" id="comp-ifm7h3kg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ifm7h3kg"></div><div style="top: 2833px; left: 0px; width: 0px; height: 90px; position: absolute;" class="s12" id="comp-igl58cjj" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-igl58cjj"></div><div style="top: 76px; left: 0px; width: 982px; position: absolute;" class="s1" id="comp-ikgp1dnt" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ikgp1dnt"><h3 class="font_3" style="font-size: 69px; line-height: 0.9em; text-align: center;"><span style="font-size:69px"><span style="color:#FFFFFF"><span class="wixGuard">​</span></span></span></h3>
-
-<h3 class="font_3" style="font-size: 69px; line-height: 0.9em; text-align: center;"><span style="font-size:69px"><span style="color:#FFFFFF">HYPERLOCAL DIGITAL OOH</span></span></h3>
-</div><div style="top: 301px; left: 3px; width: 975px; position: absolute;" class="s1" id="comp-ikgp1dnv" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ikgp1dnv"><h6 class="font_6" style="font-size:60px; text-align:center"><span style="letter-spacing:0.05em;"><span style="font-size:60px"><span class="color_11">&nbsp;VIA&nbsp;TRANSIT MEDIA</span></span></span></h6>
-</div><div style="top: 226px; left: 0px; width: 982px; position: absolute;" class="s1" id="comp-ikgp1dnw1" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ikgp1dnw1"><h3 class="font_3" style="font-size: 69px; line-height: 0.9em; text-align: center;"><span style="font-size:69px;"><span class="color_11">ADVERTISING</span></span></h3>
-</div><div style="top: 1363px; left: -469px; width: 0px; height: 21px; position: absolute;" class="s12" id="comp-ioocp7oz" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioocp7oz"></div><div style="top: 2201px; height: 632px; position: absolute; width: 980px; left: 0px;" class="s8" id="comp-iood5b4k" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k"><div style="position: absolute; top: 0px; width: 1280px; height: 632px; left: -150px; overflow: hidden; clip: rect(0px 1280px 632px -150px);" id="comp-iood5b4kbackground" class="s8background" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.0"><div id="comp-iood5b4kbackgroundMedia" style="position: absolute; pointer-events: none; top: 0px; width: 1280px; left: 0px; height: 632px; background-color: rgb(250, 250, 250);" data-effect="none" data-fitting="fill" data-align="center" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.0.$media_preview"></div></div><div id="comp-iood5b4kinlineContent" class="s8inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1"><div style="top: 25px; left: 0px; width: 980px; position: absolute;" class="s1" id="comp-iood5bkw" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bkw"><h1 style="text-align: center; font-size: 40px;" class="font_0"><span style="font-weight:bold;"><span style="color:#0F0F0F;"><span style="font-style:normal;"><span style="font-size:40px;"><span style="font-family: georgia, palatino, &#39;book antiqua&#39;, &#39;palatino linotype&#39;, serif;">Meet The Team</span></span></span></span></span></h1>
-</div><div style="top: 63px; left: 472px; width: 34px; height: 5px; position: absolute;" class="s13" id="comp-iood5bll" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bll"><div id="comp-iood5bllline" class="s13line" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bll.0"></div></div><div style="top: 372px; left: 616px; width: 216px; position: absolute;" class="s1" id="comp-iood5blt" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5blt"><h1 class="font_0" style="font-size: 22px; line-height: 0.8em; text-align: center;"><span style="font-size:22px;"><span style="font-style:italic"><span style="color:#4D4A4A"><span style="font-weight:normal"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Shashwat Diesh</span></span></span></span></span></h1>
-
-<h1 class="font_0" style="font-size: 22px; line-height: 0.8em; text-align: center;"><span style="font-size:22px;"><span style="font-style:italic"><span style="color:#4D4A4A"><span style="font-weight:normal"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif"><span class="wixGuard">​</span></span></span></span></span></span></h1>
-</div><div style="top: 417px; left: 628px; width: 220px; position: absolute;" class="s1" id="comp-iood5blx" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5blx"><p class="font_8" style="text-align:center"><span style="font-weight:bold">B.Tech, RV College of Engg, Bangalore</span></p>
-
-<p class="font_8" style="text-align:center"><span style="font-weight:bold">Ex Project Manager, Snapdeal</span></p>
-
-<p class="font_8" style="text-align:center"><span style="font-weight:bold">Ex Operations Manager, Ola</span></p>
-</div><div style="top:125px;bottom:;left:616px;right:;width:216px;height:217px;position:absolute;" data-exact-height="217" data-content-padding-horizontal="0" data-content-padding-vertical="0" title="guy4.jpg" class="s14" id="comp-iood5bm7" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bm7"><div style="width:216px;height:217px;" id="comp-iood5bm7link" class="s14link" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bm7.0"><div style="width:216px;height:217px;position:relative;" id="comp-iood5bm7img" class="s14img" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bm7.0.0"><div class="s14imgpreloader" id="comp-iood5bm7imgpreloader" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bm7.0.0.0"></div><img id="comp-iood5bm7imgimage" alt="" src="./vheeler_files/8d13be_823ed7dfb3484ce3b731ee9f43e002be.jpg" style="width: 216px; height: 217px; object-fit: cover;" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bm7.0.0.$image"></div></div></div><div style="top:128px;bottom:;left:172px;right:;width:216px;height:217px;position:absolute;" data-exact-height="217" data-content-padding-horizontal="0" data-content-padding-vertical="0" title="guy2.jpg" class="s15" id="comp-iood5bn1" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bn1"><div style="width:216px;height:217px;" id="comp-iood5bn1link" class="s15link" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bn1.0"><div style="width:216px;height:217px;position:relative;" id="comp-iood5bn1img" class="s15img" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bn1.0.0"><div class="s15imgpreloader" id="comp-iood5bn1imgpreloader" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bn1.0.0.0"></div>
-
-<img id="comp-iood5bn1imgimage" alt="" src="./vheeler_files/12828305_10154005601368126_2503316935989006289_o.jpg" style="width: 216px; height: 217px; object-fit: cover;" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bn1.0.0.$image"><
-
-/div></div></div><div style="top: 414px; left: 153px; width: 254px; position: absolute;" class="s1" id="comp-iood5bn5" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bn5"><p class="font_8" style="text-align: center; font-size: 14px;"><span style="font-size:14px;"><span style="font-weight:bold;">MBA, ISB Hyderabad<br>
-B.Tech, NIT Kurukshetra<br>
-Ex Product Manager, Crowdfire</span></span></p>
-
-<p class="font_8" style="text-align: center; font-size: 14px;"><span style="font-size:14px;"><span style="font-weight:bold;">Ex Sr. Software Dev, Amazon</span></span></p>
-</div><div style="top: 375px; left: 172px; width: 216px; position: absolute;" class="s1" id="comp-iood5bna" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iood5b4k.1.$comp-iood5bna"><h1 class="font_0" style="font-size: 22px; line-height: 0.8em; text-align: center;"><span style="font-size:22px;"><span style="font-style:italic"><span style="color:#4D4A4A"><span style="font-weight:normal"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Aditya Nema</span></span></span></span></span></h1>
-</div></div></div><div style="top: 2833px; height: 650px; position: absolute; width: 980px; left: 0px;" class="s8" id="comp-ioodqxo6" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6"><div style="position: absolute; top: 0px; width: 1280px; height: 650px; left: -150px; overflow: hidden; clip: rect(0px 1280px 650px -150px);" id="comp-ioodqxo6background" class="s8background" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.0"><div id="comp-ioodqxo6backgroundMedia" style="position: absolute; pointer-events: none; top: 0px; width: 1280px; left: 0px; height: 650px; background-color: rgb(33, 33, 33);" data-effect="none" data-fitting="fill" data-align="center" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.0.$media_preview"></div></div><div id="comp-ioodqxo6inlineContent" class="s8inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1"><div style="top: 474px; left: 651px; width: 177px; position: absolute;" class="s1" id="comp-ioodqxzx" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqxzx"><h1 class="font_0" style="font-size:20px; text-align:center"><span style="font-family:din-next-w01-light"><span style="color:#FFFFFE"><span style="font-weight:normal"><span style="font-style:normal"><span style="font-size:20px"><span style="letter-spacing:0.1em">+91-7032409634</span></span></span></span></span></span></h1>
-
-<h1 class="font_0" style="font-size:20px; text-align:center"><span style="font-family:din-next-w01-light"><span style="color:#FFFFFE"><span style="font-weight:normal"><span style="font-style:normal"><span style="font-size:20px"><span style="letter-spacing:0.1em">+91-7042690054</span></span></span></span></span></span></h1>
-</div><div style="top:380px;bottom:;left:729px;right:;width:21px;height:43px;position:absolute;" data-exact-height="43" data-content-padding-horizontal="0" data-content-padding-vertical="0" title="phone.png" class="s16" id="comp-ioodqy01" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqy01"><div style="width:21px;height:43px;" id="comp-ioodqy01link" class="s16link" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqy01.0"><div style="width:21px;height:43px;position:relative;" id="comp-ioodqy01img" class="s16img" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqy01.0.0"><div class="s16imgpreloader" id="comp-ioodqy01imgpreloader" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqy01.0.0.0"></div><img id="comp-ioodqy01imgimage" alt="" src="./vheeler_files/8d13be_b501f2daaabb4834ac8e47e217da7b79.png" style="width: 21px; height: 43px; object-fit: cover;" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqy01.0.0.$image"></div></div></div><div style="top:395px;bottom:;left:217px;right:;width:42px;height:28px;position:absolute;" data-exact-height="28" data-content-padding-horizontal="0" data-content-padding-vertical="0" title="mail.png" class="s17" id="comp-ioodqy0g" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqy0g"><div style="width:42px;height:28px;" id="comp-ioodqy0glink" class="s17link" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqy0g.0"><div style="width:42px;height:28px;position:relative;" id="comp-ioodqy0gimg" class="s17img" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqy0g.0.0"><div class="s17imgpreloader" id="comp-ioodqy0gimgpreloader" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqy0g.0.0.0"></div><img id="comp-ioodqy0gimgimage" alt="" src="./vheeler_files/8d13be_425e3d33bc0d459a8511d2624e71465f.png" style="width: 42px; height: 28px; object-fit: cover;" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqy0g.0.0.$image"></div></div></div><div style="top: 474px; left: 112px; width: 251px; position: absolute;" class="s1" id="comp-ioodqy0k" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqy0k"><h1 class="font_0" style="font-size: 20px; text-align: center;"><span style="font-family:din-next-w01-light"><span style="color:#FFFFFE"><span style="font-style:normal"><span style="font-weight:normal"><span style="font-size:20px"><span style="letter-spacing:0.1em">aditya@vheeler.com</span></span></span></span></span></span></h1>
-
-<h1 class="font_0" style="font-size: 20px; text-align: center;"><span style="font-family:din-next-w01-light"><span style="color:#FFFFFE"><span style="font-style:normal"><span style="font-weight:normal"><span style="font-size:20px"><span style="letter-spacing:0.1em">shashwat@vheeler.com</span></span></span></span></span></span></h1>
-</div><div style="top: 145px; left: 0px; width: 980px; position: absolute;" class="s1" id="comp-ioodqy0o" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqy0o"><h1 style="text-align: center; font-size: 54px; line-height: 1.1em;" class="font_0"><span style="font-family:din-next-w01-light;"><span style="color:#FFFFFE;"><span style="font-style:normal;"><span style="font-weight:normal;"><span style="font-size:54px;"><span style="letter-spacing:0.15em;">GET IN TOUCH</span></span></span></span></span></span></h1>
-</div><div style="top: 223px; left: 0px; width: 980px; position: absolute;" class="s1" id="comp-ioodqy0r" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-ioodqxo6.1.$comp-ioodqy0r"><h1 style="font-size: 40px; text-align: center;" class="font_0"><span style="font-size:40px;"><span style="color:#FFFFFE;"><span style="font-weight:normal;"><span style="font-family: &#39;times new roman&#39;, times, serif;"><span style="letter-spacing: 3.45000004768372px;"><i>We'd love to hear from you</i></span></span></span></span></span></h1>
-</div></div></div><div style="top: 490px; left: 0px; width: 979px; position: absolute;" class="s1" id="comp-iop7nmdq" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$jt80h.1.$comp-iop7nmdq"><h2 class="font_2" style="font-size: 33px; text-align: center;"><span style="font-size:33px;"><span class="color_11"><span style="font-family:georgia,palatino,book antiqua,palatino linotype,serif">Get Seen Where People Are, Where It Actually Matters</span></span></span></h2>
-</div></div></div></div></div></div></div></div></div><div data-reactid=".0.$siteAspectsContainer"></div><noscript data-reactid=".0.6"></noscript></div></div>
-
-    
 <script type="text/javascript">
-    $( document ).ready(function() {
-        $(".wixAdsdesktopWADTop").hide();
-        $(".wixAdsdesktopWADBottom").hide();
-        $("#comp-iood5bn1imgimage").attr('src', './vheeler_files/12828305_10154005601368126_2503316935989006289_o.jpg');
-        $("#comp-iood5bm7imgimage").attr('src', './vheeler_files/WhatsApp-Image-20160527.jpeg');
-    });
+    $("#header").innerHeight($("#header").innerHeight() > 680 ? $("#header").innerHeight() : 680);
+    $("#aboutus").innerHeight($("#header").innerHeight() > 680 ? $("#header").innerHeight() : 680);
+    $("#team").innerHeight($("#team").innerHeight() > 680 ? $("#team").innerHeight() : 680);
+    $("#contact").innerHeight($("#contact").innerHeight() > 680 ? $("#contact").innerHeight() : 680);
+    $("#platform").innerHeight($("#platform").innerHeight() > 680 ? $("#platform").innerHeight() : 680);
 </script>
-    
-        
-    
 
-    
+<!-- Google Analytics -->
 
-</body></html>
+<!-- Google Analytics END -->
+
+</html>
